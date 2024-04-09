@@ -15,7 +15,7 @@ const UserSchema = new mongoose.Schema({
         type: String
     },
     birthday: {
-        type: Number,
+        type: String,
         required: false
     },
     avatar: {

@@ -8,7 +8,11 @@ const ReviewsSchema = new mongoose.Schema({
     evaluation_score: {
         type: Number,
         required: true
+    },
+    travel_location: {
+        type: String,
+        required: true
     }
 }, {timestamps: true, strict: true});
 
-// module.exports = mongoose.model('reviewsModel', ReviewsSchema, 'reviews')
+module.exports = mongoose.model('reviewsModel', ReviewsSchema, 'reviews')

@@ -1,0 +1,7 @@
+POST http://localhost:3029/addReview/66155a4630cc78a4f6a392f1
+Content-Type: application/json
+
+{
+   "comment": "Molto bello",
+   "evaluation_score": 10
+}

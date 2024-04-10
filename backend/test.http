@@ -1,7 +1,10 @@
-POST http://localhost:3029/addReview/66155a4630cc78a4f6a392f1
+POST http://localhost:3029/addWinterDestination
 Content-Type: application/json
 
 {
-   "comment": "Molto bello",
-   "evaluation_score": 10
+   "travel_location": "Milano",
+    "price":333,
+    "image_location":"fds" ,
+    "description": "ffggg",
+    "main_attractions": "hhhgfgf"
 }

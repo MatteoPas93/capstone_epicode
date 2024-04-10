@@ -51,7 +51,8 @@ exports.addDestination = async (request, response) => {
     const newDestination = new summerDestModel({
         travel_location: request.body.travel_location,
         price: request.body.price,
-        image_location: request.body.image_location,
+        cover_image: request.body.cover_image,
+        images_location: request.body.images_location,
         description: request.body.description,
         main_attractions: request.body.main_attractions
     });

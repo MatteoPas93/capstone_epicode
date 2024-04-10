@@ -10,10 +10,14 @@ const WinterDestinationSchema = new mongoose.Schema(
       type: Number,
       required: true,
     },
-    image_location: {
+    cover_image: {
       type: String,
-      required: true,
+      required: true
     },
+    images_location: [{
+      type: String,
+      required: false
+    }],
     description: {
       type: String,
       required: true,

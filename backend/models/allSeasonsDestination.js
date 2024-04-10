@@ -10,10 +10,11 @@ const AllSeasonsDestinationSchema = new mongoose.Schema(
       type: Number,
       required: true,
     },
-    image_location: {
+    cover_image: {
       type: String,
-      required: true,
+      required: true
     },
+    images_location: [],
     description: {
       type: String,
       required: true,

@@ -2,11 +2,13 @@ const express = require('express');
 const router = express.Router();
 const reviewController = require('../controller/reviewsController')
 
-router.get('/getReviews/:id', reviewController.getReviews );
+router.get('/getUserReviews/:id', reviewController.getUserReviews);
+
+router.get('/getDestinationReviews/:id', reviewController.getDestinationReviews );
 
 router.get('/getReview/:id/reviews/:reviewId', reviewController.getReview );
 
-router.post('/addReview/:id', reviewController.addReviews );
+router.post('/addReview/:id', reviewController.addDestinationReviews );
 
 router.patch('/editReview/:id/reviews/:reviewId', reviewController.patchReview );
 

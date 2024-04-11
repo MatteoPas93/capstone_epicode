@@ -11,7 +11,11 @@ const ReviewsSchema = new mongoose.Schema({
     },
     travel_location: {
         type: String,
-        required: true
+        required: false
+    },
+    name: {
+        type: String,
+        required: false
     }
 }, {timestamps: true, strict: true});
 

@@ -21,4 +21,14 @@ Content-Type: application/json
 
 ####
 
-GET http://localhost:3029/getUsers
+GET http://localhost:3029/getDestinationReviews/6616a6d08d8800259d3b8921
+
+####
+
+POST http://localhost:3029/addReview/6616a6d08d8800259d3b8921
+Content-Type: application/json
+
+{
+    "comment": "recensione",
+    "evaluation_score":5
+}

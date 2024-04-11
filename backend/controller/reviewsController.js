@@ -1,6 +1,20 @@
 const reviewsModel = require("../models/reviews");
 
-exports.getReviews = async (request, response) => {
+
+exports.getUserReviews = async (request, response) => {
+  const { id } = request.params;
+  try {
+    const reviews = await reviewsModel.find({ name: id });
+    response.status(200).send(reviews);
+  } catch (error) {
+    response.status(500).send({
+      statusCode: 500,
+      message: "Internal Server Error",
+    });
+  }
+};
+
+exports.getDestinationReviews = async (request, response) => {
   const { id } = request.params;
   try {
     const reviews = await reviewsModel.find({ travel_location: id });
@@ -26,13 +40,14 @@ exports.getReview = async (request, response) => {
   }
 };
 
-exports.addReviews = async (request, response) => {
+exports.addDestinationReviews = async (request, response) => {
   const { id } = request.params;
 
   const newReview = new reviewsModel({
     comment: request.body.comment,
     evaluation_score: request.body.evaluation_score,
     travel_location: id,
+    
   });
 
   try {

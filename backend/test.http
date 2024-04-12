@@ -21,7 +21,7 @@ Content-Type: application/json
 
 ####
 
-GET http://localhost:3029/getDestinationReviews/6616a6d08d8800259d3b8921
+GET http://localhost:3029/getWinterDestination/6616a937e8c1fe38d3dac4f0
 
 ####
 

@@ -1,6 +1,5 @@
 import axios from "axios";
 
-
 // !Get Winter Destinations
 export const getWinterDestinations = async () => {
   try {
@@ -17,13 +16,14 @@ export const getWinterDestinations = async () => {
     if (response.status === 500) {
       console.error("Internal Server Error", response.data);
     }
-    return response
+    return response;
   } catch (error) {
     console.error("Error get winter location");
-    throw error
+    throw error;
   }
 };
 
+// !Get Summer Destinations
 export const getSummerDestinations = async () => {
   try {
     const response = await axios.get(
@@ -39,13 +39,14 @@ export const getSummerDestinations = async () => {
     if (response.status === 500) {
       console.error("Internal Server Error", response.data);
     }
-    return response
+    return response;
   } catch (error) {
     console.error("Error get winter location");
-    throw error
+    throw error;
   }
-}
+};
 
+// !Get All Seasons Destinations
 export const getAllSeasonsDestinations = async () => {
   try {
     const response = await axios.get(
@@ -61,9 +62,31 @@ export const getAllSeasonsDestinations = async () => {
     if (response.status === 500) {
       console.error("Internal Server Error", response.data);
     }
-    return response
+    return response;
   } catch (error) {
     console.error("Error get winter location");
+    throw error;
+  }
+};
+
+// !Get one Winter Destination
+export const getOneDestination = async (id) => {
+  try {
+    const response = await axios.get(
+      `${process.env.REACT_APP_SERVER_BASE_URL}/getWinterDestination/${id}`
+    );
+    if (response.status === 404) {
+      console.error("Page not found", response.data);
+    }
+    if (response.status === 401) {
+      console.error("No authorization", response.data);
+    }
+    if (response.status === 500) {
+      console.error("Internal Server Error", response.data);
+    }
+    return response.data;
+  } catch (error) {
+    console.error('Error get winter destination', error);
     throw error
   }
-}
+};

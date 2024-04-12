@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import "./destinations.css";
 import Carousel from "react-bootstrap/Carousel";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { Link } from "react-router-dom";
 
 
 const WinterDestinations = () => {
@@ -53,10 +54,12 @@ const WinterDestinations = () => {
         <Carousel.Item>
           <div className="container-slide">
             {firstSlide.map((destination) => (
-              <div key={destination._id} className="card_location">
+              <Link key={destination._id} to={`/detail_destination/${destination._id}`}>
+              <div  className="card_location">
                 <h2>{destination.travel_location}</h2>
                 <img src={destination.cover_image} alt="cover" />
               </div>
+              </Link>
             ))}
           </div>
 

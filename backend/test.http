@@ -1,4 +1,4 @@
-POST http://localhost:3029/addWinterDestination
+POST http://localhost:3029/addAllSeasonsDestination
 Content-Type: application/json
 
 {
@@ -32,3 +32,17 @@ Content-Type: application/json
     "comment": "recensione",
     "evaluation_score":5
 }
+
+####
+
+POST http://localhost:3029/addReview/6616a937e8c1fe38d3dac4f0/reviews/661556e743ece0502b142377
+Content-Type: application/json
+
+{
+    "comment": "prova recensione",
+    "evaluation_score": 3
+}
+
+####
+
+GET http://localhost:3029/getUser/661556e743ece0502b142377

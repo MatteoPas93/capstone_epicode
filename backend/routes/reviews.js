@@ -8,7 +8,7 @@ router.get('/getDestinationReviews/:id', reviewController.getDestinationReviews 
 
 router.get('/getReview/:id/reviews/:reviewId', reviewController.getReview );
 
-router.post('/addReview/:id', reviewController.addDestinationReviews );
+router.post('/addReview/:travelId/reviews/:userId', reviewController.addDestinationReviews );
 
 router.patch('/editReview/:id/reviews/:reviewId', reviewController.patchReview );
 

@@ -1,0 +1,23 @@
+.container-destinations {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.div-carousel {
+    width: 85%;
+}
+.container-slide {
+    display: flex;
+}
+
+.card_location {
+    width: 250px;
+    height: 250px;
+    margin-inline: 10px;
+}
+
+.card_location img {
+    width: 250px;
+} 

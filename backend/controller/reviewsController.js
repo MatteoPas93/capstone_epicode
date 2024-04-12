@@ -41,12 +41,13 @@ exports.getReview = async (request, response) => {
 };
 
 exports.addDestinationReviews = async (request, response) => {
-  const { id } = request.params;
+  const { travelId, userId } = request.params;
 
   const newReview = new reviewsModel({
     comment: request.body.comment,
     evaluation_score: request.body.evaluation_score,
-    travel_location: id,
+    travel_location: travelId,
+    name: userId
     
   });
 

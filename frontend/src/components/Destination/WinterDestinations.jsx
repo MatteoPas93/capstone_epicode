@@ -1,5 +1,5 @@
 import React from "react";
-import { getWinterDestinations } from "../../../axios_fetch/fetch";
+import { getWinterDestinations } from "../axios_fetch/fetch";
 import { useState, useEffect } from "react";
 import "./destinations.css";
 import Carousel from "react-bootstrap/Carousel";
@@ -49,7 +49,7 @@ const WinterDestinations = () => {
     <>
     <div className="container-destinations">
     <h1>Le nostre destinazioni invernali</h1>
-      <Carousel className="div-carousel" activeIndex={index} onSelect={handleSelect}>
+      <Carousel className="div-carousel" activeIndex={index} onSelect={handleSelect} interval={10000}>
         <Carousel.Item>
           <div className="container-slide">
             {firstSlide.map((destination) => (

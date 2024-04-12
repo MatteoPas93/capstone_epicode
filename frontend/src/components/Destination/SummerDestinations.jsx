@@ -1,11 +1,11 @@
 import React from "react";
-import { getAllSeasonsDestinations } from "../../../axios_fetch/fetch";
+import { getSummerDestinations } from "../axios_fetch/fetch";
 import { useState, useEffect } from "react";
 import './destinations.css';
 import Carousel from "react-bootstrap/Carousel";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-const AllSeasonsDestination = () => {
+const SummerDestinations = () => {
     const [destinations, setDestinations] = useState([]);
     const [loading, setLoading] = useState(true);
     const [index, setIndex] = useState(0);
@@ -16,7 +16,7 @@ const AllSeasonsDestination = () => {
 
     const fetchSummerDest = async () => {
         try {
-            const response = await getAllSeasonsDestinations();
+            const response = await getSummerDestinations();
             setDestinations(response.data.destinations);
             setLoading(false);
         } catch (error) {
@@ -44,8 +44,8 @@ const AllSeasonsDestination = () => {
     return (
         <>
         <div className="container-destinations">
-        <h1>Destinazioni per tutto l'anno!</h1>
-          <Carousel className="div-carousel" activeIndex={index} onSelect={handleSelect}>
+        <h1>Le nostre destinazioni Estive</h1>
+          <Carousel className="div-carousel" activeIndex={index} onSelect={handleSelect} interval={9000}>
             <Carousel.Item>
               <div className="container-slide">
                 {firstSlide.map((destination) => (
@@ -75,4 +75,4 @@ const AllSeasonsDestination = () => {
       );
 };
 
-export default AllSeasonsDestination;
+export default SummerDestinations;

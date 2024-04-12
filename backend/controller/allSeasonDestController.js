@@ -2,7 +2,7 @@ const allSeasonsDestModel = require('../models/allSeasonsDestination');
 
 
 exports.getDestinations = async (request, response) => {
-    const {page = 1, pageSize = 5} = request.query;
+    const {page = 1, pageSize = 20} = request.query;
     try {
         const destinations = await allSeasonsDestModel
           .find()

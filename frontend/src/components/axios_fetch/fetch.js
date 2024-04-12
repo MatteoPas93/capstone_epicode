@@ -50,7 +50,7 @@ export const getSummerDestinations = async () => {
 export const getAllSeasonsDestinations = async () => {
   try {
     const response = await axios.get(
-      `${process.env.REACT_APP_SERVER_BASE_URL}/getSummerDestinations`
+      `${process.env.REACT_APP_SERVER_BASE_URL}/getAllSeasonsDestinations`
     );
 
     if (response.status === 404) {
@@ -69,24 +69,3 @@ export const getAllSeasonsDestinations = async () => {
   }
 };
 
-// !Get one Winter Destination
-export const getOneDestination = async (id) => {
-  try {
-    const response = await axios.get(
-      `${process.env.REACT_APP_SERVER_BASE_URL}/getWinterDestination/${id}`
-    );
-    if (response.status === 404) {
-      console.error("Page not found", response.data);
-    }
-    if (response.status === 401) {
-      console.error("No authorization", response.data);
-    }
-    if (response.status === 500) {
-      console.error("Internal Server Error", response.data);
-    }
-    return response.data;
-  } catch (error) {
-    console.error('Error get winter destination', error);
-    throw error
-  }
-};

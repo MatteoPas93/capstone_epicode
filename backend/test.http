@@ -2,18 +2,16 @@ POST http://localhost:3029/addDestination
 Content-Type: application/json
 
 {
-   "travel_location": "Budapest",
-    "price":215.00,
-    "cover_image": "https://www.10cose.it/wp-content/uploads/2017/02/capitale-budapest.jpg",
-    "images_location":["https://www.10cose.it/wp-content/uploads/2015/10/castello-Buda-budapest.jpg",
-    "https://www.10cose.it/wp-content/uploads/2018/05/chiesa-mattia-budapest-375x250-1.jpg",
-    "https://www.10cose.it/wp-content/uploads/2015/10/pest-budapest.jpg",
-    "https://www.10cose.it/wp-content/uploads/2015/10/grande-sinagoga-budapest.jpg",
-    "https://www.10cose.it/wp-content/uploads/2015/10/isola-margherita-budapest.jpg",
-    "https://www.10cose.it/wp-content/uploads/2015/10/parlamento-budapest.jpg"
-                       ] ,
-    "description": "Budapest, non a caso, è definita la “Parigi dell’Est“. La città ha molti tratti in comune con la capitale francese e alcuni scorci riportano subito alle vedute di Parigi: c’è un fiume, che taglia la città e su cui si affacciano castelli e bei palazzi, e c’è una collina simile a Montmartre su cui arrampicarsi per godersi il panorama su tutta Budapest.",
-    "main_attractions": "Nel cuore di Buda si innalzano al cielo le guglie gotiche della Chiesa di Mattia. Costruita per volere del re Bèla IV nel XIII secolo, la Chiesa di Nostra Signora, dedicata alla Vergine, assunse successivamente l’attuale nome in onore del re ungherese Mattia Corvino, sovrano illuminato, che la fece ricostruire verso la fine del 1400 e che qui celebrò i suoi due matrimoni (da notare lo stemma reale, il corvo, sulla facciata della torre).",
+   "travel_location": "Vienna",
+    "price":239.00,
+    "cover_image": "https://tse1.mm.bing.net/th?id=OIP.rUclbL1c9hdkdAEbiLWrSgHaE8&pid=Api&P=0&h=180",
+    "images_location":["https://tse1.mm.bing.net/th?id=OIP.W-PLjvV6w8Pi4Nmg1RSfUgHaE6&pid=Api&P=0&h=180",
+    "https://tse1.mm.bing.net/th?id=OIP.9xbuhrruBORXoytCZlBo4gHaEo&pid=Api&P=0&h=180",
+    "https://tse1.mm.bing.net/th?id=OIP.AB29-LX3gI4bHSJSa2ORrAHaE5&pid=Api&P=0&h=180",
+    "https://tse3.mm.bing.net/th?id=OIP.T18Cddz7L6ZWVTSWxmvkQwHaE8&pid=Api&P=0&h=180",
+    "https://tse2.mm.bing.net/th?id=OIP.7hbgwzGHGgQBRIHa0nRuagHaEo&pid=Api&P=0&h=180"] ,
+    "description": "Città imperiale, patria della Secessione e della psicanalisi, Vienna offre ai suoi visitatori complessi museali, palazzi storici, giardini fioriti e un ricco calendario d’eventi. Con il Prater, i molti caffè, i locali di tendenza, l’isola del Danubio, la capitale fa godere momenti di cultura, svago, relax.",
+    "main_attractions": "Il duomo di Santo Stefano. Iniziato nel XII secolo, con interni rimaneggiati nei secoli fino al barocco, oggi è il simbolo di Vienna e il più importante monumento gotico dell’Austria. Dai 136,44 metri della torre più alta, a cui si sale con 343 gradini, si gode una vista sconfinata su tutta Vienna.La Hofburg, uno dei più grandi palazzi imperiali esistenti al mondo, per secoli residenza degli Ausburgo. Oggi potete visitare sontuosi edifici, con giardini, musei, gli appartamenti degli Asburgo, la Scuola di equitazione spagnola.",
     "season" : "all_seasons"
 
 

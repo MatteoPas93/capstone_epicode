@@ -19,7 +19,7 @@
 }
 
 .card_location img {
-    width: 250px;
+    max-width: 250px;
 } 
 
 .summer_destinations,

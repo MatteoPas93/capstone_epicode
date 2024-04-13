@@ -21,3 +21,11 @@
 .card_location img {
     width: 250px;
 } 
+
+.summer_destinations,
+.winter_destinations,
+.all_season_destinations {
+    width: 90%;
+    text-align: center;
+}
+

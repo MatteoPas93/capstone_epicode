@@ -1,4 +1,4 @@
-POST http://localhost:3029/addWinterDestination
+POST http://localhost:3029/addDestination
 Content-Type: application/json
 
 {
@@ -13,7 +13,8 @@ Content-Type: application/json
     "https://www.10cose.it/wp-content/uploads/2015/10/parlamento-budapest.jpg"
                        ] ,
     "description": "Budapest, non a caso, è definita la “Parigi dell’Est“. La città ha molti tratti in comune con la capitale francese e alcuni scorci riportano subito alle vedute di Parigi: c’è un fiume, che taglia la città e su cui si affacciano castelli e bei palazzi, e c’è una collina simile a Montmartre su cui arrampicarsi per godersi il panorama su tutta Budapest.",
-    "main_attractions": "Nel cuore di Buda si innalzano al cielo le guglie gotiche della Chiesa di Mattia. Costruita per volere del re Bèla IV nel XIII secolo, la Chiesa di Nostra Signora, dedicata alla Vergine, assunse successivamente l’attuale nome in onore del re ungherese Mattia Corvino, sovrano illuminato, che la fece ricostruire verso la fine del 1400 e che qui celebrò i suoi due matrimoni (da notare lo stemma reale, il corvo, sulla facciata della torre)."
+    "main_attractions": "Nel cuore di Buda si innalzano al cielo le guglie gotiche della Chiesa di Mattia. Costruita per volere del re Bèla IV nel XIII secolo, la Chiesa di Nostra Signora, dedicata alla Vergine, assunse successivamente l’attuale nome in onore del re ungherese Mattia Corvino, sovrano illuminato, che la fece ricostruire verso la fine del 1400 e che qui celebrò i suoi due matrimoni (da notare lo stemma reale, il corvo, sulla facciata della torre).",
+    "season" : "all_seasons"
 
 
 

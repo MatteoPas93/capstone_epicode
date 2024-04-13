@@ -10,9 +10,6 @@ const app = express();
 
 const usersRoute = require('./routes/users');
 const reviewsRoute = require('./routes/reviews');
-// const summerDestinationRoute = require('./routes/summerDestination');
-// const winterDestinationRoute = require('./routes/winterDestination');
-// const allSeasonsDestinationRoute = require('./routes/allSeasonsDestination');
 const loginRoute = require('./routes/login');
 const destinationRoute = require('./routes/destination')
 
@@ -22,9 +19,6 @@ app.use(cors());
 app.use('/', usersRoute);
 app.use('/', reviewsRoute);
 app.use('/', destinationRoute);
-// app.use('/', summerDestinationRoute);
-// app.use('/', winterDestinationRoute);
-// app.use('/', allSeasonsDestinationRoute);
 app.use('/', loginRoute);
 
 // ! Database connection

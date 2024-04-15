@@ -13,7 +13,7 @@ const NavigationBar = () => {
           <div>
             <Nav className="me-auto">
               <Nav.Link href="/">Home</Nav.Link>
-              <NavDropdown title="Dropdown" id="basic-nav-dropdown">
+              <NavDropdown title="Destinazioni" id="basic-nav-dropdown">
                 <NavDropdown.Item href="/summer_destinations">
                   Mete estive
                 </NavDropdown.Item>
@@ -29,7 +29,7 @@ const NavigationBar = () => {
             </Nav>
           </div>
           <div>
-          <Nav.Link  href="/registration">Registrati/Accedi</Nav.Link>
+          <Nav.Link  href="/login">Registrati/Accedi</Nav.Link>
           </div>
         </Navbar.Collapse>
       </Container>

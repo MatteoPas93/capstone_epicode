@@ -38,7 +38,7 @@ exports.loginPost = async (request, response) => {
 
     response.header("Authorization", token).status(200).send({
       statusCode: 200,
-      message: "Ligin Successful",
+      message: "Login Successful",
       token,
     });
   } catch (error) {

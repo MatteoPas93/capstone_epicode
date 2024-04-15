@@ -68,3 +68,27 @@ export const addReview = async (reviewData) => {
     throw error;
   }
 };
+
+// ! LOGIN
+
+export const loginFetch = async (loginData) => {
+  try {
+    const response = await axios.post(
+      `${process.env.REACT_APP_SERVER_BASE_URL}/login`,
+      loginData
+    );
+    if (response.status === 404) {
+      console.error("Page not found", response.data);
+    }
+    if (response.status === 401) {
+      console.error("No authorization", response.data);
+    }
+    if (response.status === 500) {
+      console.error("Internal Server Error", response.data);
+    }
+    return response
+  } catch (error) {
+    console.error("Error login");
+    throw error
+  }
+};

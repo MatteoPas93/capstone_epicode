@@ -10,17 +10,19 @@
 }
 
 .carousel-control-next, .carousel-control-prev {
-    top: -23% !important;
+    height: 100%;
 }
 
 .carousel-control-prev  {
     background: darkcyan !important; 
     width: 20px !important;
+    border-radius: 5px 0px 0px 5px;
 }
 
 .carousel-control-next {
     background: darkcyan !important;
     width: 20px !important;
+    border-radius: 0px 5px 5px 0px;
 }
 
 .carousel-indicators {
@@ -29,19 +31,26 @@
 
 .container-slide {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    border: 1px solid darkcyan;
+    border-radius: 5px;
 }
 
 .card_location {
     max-width: 250px;
     min-width: 180px;
-    height: 250px;
     margin-inline: 10px;
+    border: 1px solid darkcyan;
+    border-radius: 5px;
+    margin-block: 10px;
     
 }
 
 .card_location img {
     max-width: 100%;
     max-height: 100%;
+    border-radius: 0px 0px 5px 5px;
 } 
 
 .summer_destinations,
@@ -50,6 +59,5 @@
     width: 90%;
     text-align: center;
     margin-block: 10px;
-    border: 1px solid black;
 }
 

@@ -66,7 +66,7 @@ const Destinations = () => {
                 to={`/destination_details/${destination._id}`}
                 key={destination._id}
               >
-                <div className={`card_location col-md-6 ${index >= 2 ? 'd-none d-md-block' : ''}`}>
+                <div className={`card_location col-lg-3 col-md-6  ${index >= 2 ? 'd-none d-md-block' : ''}`}>
                   <h2>{destination.travel_location}</h2>
                   <img className="img-fluid" src={destination.cover_image} alt="cover" />
                 </div>

@@ -5,7 +5,7 @@ const jwt = require("jsonwebtoken");
 exports.loginPost = async (request, response) => {
   try {
     const user = await userModel.findOne({
-      email: request.body.email,
+      email: request.body.email
     });
     if (!user) {
       return response.status(404).send({

@@ -11,7 +11,8 @@ const app = express();
 const usersRoute = require('./routes/users');
 const reviewsRoute = require('./routes/reviews');
 const loginRoute = require('./routes/login');
-const destinationRoute = require('./routes/destination')
+const destinationRoute = require('./routes/destination');
+const imageRoute = require('./routes/image');
 
 app.use(express.json());
 app.use(cors());
@@ -20,6 +21,7 @@ app.use('/', usersRoute);
 app.use('/', reviewsRoute);
 app.use('/', destinationRoute);
 app.use('/', loginRoute);
+app.use('/', imageRoute);
 
 // ! Database connection
 db()

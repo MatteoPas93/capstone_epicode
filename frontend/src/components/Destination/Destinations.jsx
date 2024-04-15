@@ -134,7 +134,7 @@ const Destinations = () => {
     <>
       <div className="container-destinations">
         <div className="summer_destinations">
-          <h1>Destinazioni Estive!!!</h1>
+          <h1>Destinazioni Estive</h1>
           <Carousel
             className="div-carousel"
             activeIndex={indexSummer}
@@ -145,7 +145,7 @@ const Destinations = () => {
           </Carousel>
         </div>
         <div className="winter_destinations">
-          <h1>Destinazioni Invernali!!!</h1>
+          <h1>Destinazioni Invernali</h1>
           <Carousel
             className="div-carousel"
             activeIndex={indexWinter}
@@ -156,7 +156,7 @@ const Destinations = () => {
           </Carousel>
         </div>
         <div className="all_season_destinations">
-          <h1>Mete per tutto l'anno!!!</h1>
+          <h1>Mete per tutto l'anno</h1>
           <Carousel
             className="div-carousel"
             activeIndex={indexAllSeason}

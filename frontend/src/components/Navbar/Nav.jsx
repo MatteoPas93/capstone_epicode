@@ -7,7 +7,7 @@ const NavigationBar = () => {
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container>
-        <Navbar.Brand href="#home">DreamsTravelAgency</Navbar.Brand>
+        <Navbar.Brand href="/">DreamsTravelAgency</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse  id="basic-navbar-nav">
           <div>

@@ -52,10 +52,19 @@ GET http://localhost:3029/getUser/661556e743ece0502b142377
 
 ####
 
-POST http://locahost:3029/login
+POST http://localhost:3029/login
 Content-Type: application/json
 
 {
-    "email": "emailMatteo@email.it",
+    "email": "provaEmail@prova.it",
     "password": "prova"
+}
+
+####
+
+POST http://localhost:3029/addImage
+Content-Type: application/json
+
+{
+    "image": "https://tse1.mm.bing.net/th?id=OIP._mkLI8xiiJuWH_mVc1SNIwHaEI&pid=Api&P=0&h=180"
 }

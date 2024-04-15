@@ -6,20 +6,42 @@
 }
 
 .div-carousel {
-    width: 85%;
+    width: 100%;
 }
+
+.carousel-control-next, .carousel-control-prev {
+    top: -23% !important;
+}
+
+.carousel-control-prev  {
+    background: darkcyan !important; 
+    width: 20px !important;
+}
+
+.carousel-control-next {
+    background: darkcyan !important;
+    width: 20px !important;
+}
+
+.carousel-indicators {
+    display: none !important;
+}
+
 .container-slide {
     display: flex;
 }
 
 .card_location {
-    width: 250px;
+    max-width: 250px;
+    min-width: 180px;
     height: 250px;
     margin-inline: 10px;
+    
 }
 
 .card_location img {
-    max-width: 250px;
+    max-width: 100%;
+    max-height: 100%;
 } 
 
 .summer_destinations,
@@ -27,5 +49,7 @@
 .all_season_destinations {
     width: 90%;
     text-align: center;
+    margin-block: 10px;
+    border: 1px solid black;
 }
 

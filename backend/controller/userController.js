@@ -37,6 +37,7 @@ exports.postUser = async (request, response) => {
     name: request.body.name,
     email: request.body.email,
     password: request.body.password,
+    role: request.body.role,
     birthday: request.body.birthday,
     avatar: request.body.avatar,
   });

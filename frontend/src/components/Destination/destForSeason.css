@@ -1,0 +1,16 @@
+.container-dest {
+    display: inline-block;
+}
+
+.card-dest {
+    text-align: center;
+    display: inline-block;
+    border: 1px solid darkcyan;
+    border-radius: 5px;
+}
+
+.card-dest img {
+    width: 100%;
+    object-fit: cover;
+    aspect-ratio: 2/1;
+}

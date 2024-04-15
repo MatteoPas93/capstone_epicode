@@ -25,19 +25,19 @@ const Destinations = () => {
     setIndexAllSeason(selectedIndex);
   };
 
-  const fetchSummerDest = async () => {
+  const fetchDest = async () => {
     try {
       const response = await getDestinations();
       setDestinations(response.data.destinations);
       setLoading(false);
     } catch (error) {
-      console.error("Error get summer destinations", error);
+      console.error("Error get destinations", error);
       setLoading(false);
     }
   };
 
   useEffect(() => {
-    fetchSummerDest();
+    fetchDest();
   }, []);
 
   if (loading) {
@@ -61,19 +61,19 @@ const Destinations = () => {
       const slideFirstCarousel = (
         <Carousel.Item key={i}>
           <div className="container-slide">
-            {summerFiltered.map((destination) => (
+            {summerFiltered.map((destination, index) => (
               <Link
                 to={`/destination_details/${destination._id}`}
                 key={destination._id}
               >
-                <div className="card_location">
+                <div className={`card_location col-md-6 ${index >= 2 ? 'd-none d-md-block' : ''}`}>
                   <h2>{destination.travel_location}</h2>
-                  <img src={destination.cover_image} alt="cover" />
+                  <img className="img-fluid" src={destination.cover_image} alt="cover" />
                 </div>
               </Link>
             ))}
           </div>
-          <Carousel.Caption></Carousel.Caption>
+          {/* <Carousel.Caption></Carousel.Caption> */}
         </Carousel.Item>
       );
       summerSlides.push(slideFirstCarousel);
@@ -86,19 +86,19 @@ const Destinations = () => {
       const slideSecondCarousel = (
         <Carousel.Item key={i}>
           <div className="container-slide">
-            {winterFiltered.map((destination) => (
+            {winterFiltered.map((destination, index) => (
               <Link
                 to={`/destination_details/${destination._id}`}
                 key={destination._id}
               >
-                <div className="card_location">
+                <div className={`card_location col-md-6 ${index >= 2 ? 'd-none d-md-block' : ''}`}>
                   <h2>{destination.travel_location}</h2>
                   <img src={destination.cover_image} alt="cover" />
                 </div>
               </Link>
             ))}
           </div>
-          <Carousel.Caption></Carousel.Caption>
+          {/* <Carousel.Caption></Carousel.Caption> */}
         </Carousel.Item>
       );
       winterSlides.push(slideSecondCarousel);
@@ -111,19 +111,19 @@ const Destinations = () => {
       const slideThirdCarousel = (
         <Carousel.Item key={i}>
           <div className="container-slide">
-            {allSeasonFiltered.map((destination) => (
+            {allSeasonFiltered.map((destination, index) => (
               <Link
                 to={`/destination_details/${destination._id}`}
                 key={destination._id}
               >
-                <div className="card_location">
+                <div className={`card_location col-md-6 ${index >= 2 ? 'd-none d-md-block' : ''}`}>
                   <h2>{destination.travel_location}</h2>
                   <img src={destination.cover_image} alt="cover" />
                 </div>
               </Link>
             ))}
           </div>
-          <Carousel.Caption></Carousel.Caption>
+          {/* <Carousel.Caption></Carousel.Caption> */}
         </Carousel.Item>
       );
       allSeasonSlides.push(slideThirdCarousel);

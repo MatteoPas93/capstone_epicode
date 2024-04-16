@@ -20,8 +20,8 @@ const Login = () => {
   const onSubmit = async (event) => {
     event.preventDefault();
     const response = await loginFetch(formData);
-    
-    if (response.token) {
+    console.log(response);
+    if (response.data && response.data.token) {
       localStorage.setItem("auth", JSON.stringify(response.token));
       setTimeout(() => {
         navigate("/");

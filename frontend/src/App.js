@@ -6,6 +6,7 @@ import WinterDestPage from "./pages/WinterPage";
 import AllSeasonsDestPage from './pages/AllSeasonsPage'
 import RegistrationPage from "./pages/Registration.Page";
 import LoginPage from "./pages/LoginPage";
+import AdminPage from "./pages/AdminPage";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/winter_destinations" element={<WinterDestPage />}/>
           <Route path="/all_seasons_destinations" element={<AllSeasonsDestPage />}/>
           <Route path="/registration" element={<RegistrationPage />}/>
+          <Route path="/management" element={<AdminPage/>}/>
        </Routes>
       </BrowserRouter>
     </>

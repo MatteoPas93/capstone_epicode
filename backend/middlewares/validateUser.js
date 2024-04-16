@@ -5,6 +5,7 @@ const validateUser = (request, response, next) => {
         name,
         email,
         password,
+        role,
         birthday,
         avatar
     } = request.body
@@ -17,6 +18,9 @@ const validateUser = (request, response, next) => {
     }
     if (typeof password !== 'string' || password.length < 5) {
         errors.push('Password must be a string')
+    }
+    if (typeof role !== 'string') {
+        errors.push('Role must be a string')
     }
     if (typeof birthday !== 'string') {
         errors.push('Birthday must be a string')

@@ -1,0 +1,12 @@
+.card-dest {
+    width: 350px;
+}
+
+.card-dest button {
+    border-radius: 5px;
+    
+}
+
+.button-edit {
+    padding-block: 5px;
+}

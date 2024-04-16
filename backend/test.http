@@ -66,5 +66,18 @@ POST http://localhost:3029/addImage
 Content-Type: application/json
 
 {
-    "image": "https://tse1.mm.bing.net/th?id=OIP._mkLI8xiiJuWH_mVc1SNIwHaEI&pid=Api&P=0&h=180"
+    "image": ["https://tse1.mm.bing.net/th?id=OIP._mkLI8xiiJuWH_mVc1SNIwHaEI&pid=Api&P=0&h=180",
+    "https://res.cloudinary.com/boscolo-viaggi/image/upload/f_auto/t_PD-ContentImage-XXL/v1/Brand/BOSCOLO_MAROCCO_3155_ST_kprnot",
+    "https://sp.yimg.com/ib/th?&id=ODL.024697a7a45720d277a07d88b45cc5b8&w=200&h=107&c=4&dpr=2&rs=1",
+    "https://tse4.mm.bing.net/th?id=OIP.tPnc98gZYkK7G9VWgMTTuwHaDt&pid=Api&P=0&h=180",
+    "https://tse2.mm.bing.net/th?id=OIP.Cf7252Qn1jfjpRVHGpOY3AHaD8&pid=Api&P=0&h=180",
+    "https://tse4.mm.bing.net/th?id=OIP.BF4EbD35TEE4Gf8wNNugYAHaEX&pid=Api&P=0&h=180",
+    "https://tse4.mm.bing.net/th?id=OIP.8sQx3RTajXbvH8bk5wsfGQHaEg&pid=Api&P=0&h=180",
+    "https://tse4.mm.bing.net/th?id=OIP.X7DtnocJS9_c29Vz3CgXtAHaFF&pid=Api&P=0&h=180",
+    "https://tse1.mm.bing.net/th?id=OIP.nFrilhT9VQNE1NQQeAhFWQHaEK&pid=Api&P=0&h=180",
+    "https://tse1.mm.bing.net/th?id=OIP.Xi97O4pIIzl7GD-h3gHDxAHaE8&pid=Api&P=0&h=180",
+    "https://tse1.mm.bing.net/th?id=OIP.lHaQxUleBXVg4oUlfT7rLQHaEK&pid=Api&P=0&h=180",
+    "https://tse3.mm.bing.net/th?id=OIP.wGf-ll1QxtZcvwPe6gB7rwHaEK&pid=Api&P=0&h=180",
+    "https://tse4.mm.bing.net/th?id=OIP.apOEsQDatiIbnvYyfFDnDQHaE8&pid=Api&P=0&h=180"
+    ]
 }

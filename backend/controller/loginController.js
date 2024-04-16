@@ -13,10 +13,10 @@ exports.loginPost = async (request, response) => {
         message: "User not found",
       });
     }
-    const isPasswordValide = await bcrypt.compare(
+    const isPasswordValide =  await bcrypt.compare(
       request.body.password,
       user.password
-    );
+    )
 
     if (!isPasswordValide) {
       return response.status(401).send({

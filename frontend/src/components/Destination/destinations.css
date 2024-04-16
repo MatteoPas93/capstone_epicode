@@ -63,3 +63,17 @@
     margin-block: 10px;
 }
 
+.information {
+    width: 90%;
+}
+
+.information h4 {
+    border-bottom: 2px solid darkcyan;
+}
+
+.img-area img {
+    width: 100%;
+    object-fit: cover;
+    aspect-ratio: 2/1;
+    border-radius: 2px;
+}

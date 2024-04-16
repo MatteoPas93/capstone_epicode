@@ -28,8 +28,9 @@ const NavigationBar = () => {
               </NavDropdown>
             </Nav>
           </div>
-          <div>
-          <Nav.Link  href="/login">Registrati/Accedi</Nav.Link>
+          <div className="d-flex gap-5 ps-2">
+          <Nav.Link  href="/login">Registrati o Accedi</Nav.Link>
+          <Nav.Link  href="/management">Pagina di Gestione</Nav.Link>
           </div>
         </Navbar.Collapse>
       </Container>

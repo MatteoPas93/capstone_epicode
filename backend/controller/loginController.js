@@ -37,7 +37,7 @@ exports.loginPost = async (request, response) => {
         expiresIn: "24h",
       }
     );
-    
+    console.log(token);
 
     response.header("Authorization", token).status(200).send({
       statusCode: 200,

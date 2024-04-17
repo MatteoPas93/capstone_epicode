@@ -17,7 +17,7 @@ const validateUser = (request, response, next) => {
         errors.push('Email must be a string')
     }
     if (typeof password !== 'string' || password.length < 5) {
-        errors.push('Password must be a string')
+        errors.push('Password must be a string with min 5 char')
     }
     if (typeof role !== 'string') {
         errors.push('Role must be a string')

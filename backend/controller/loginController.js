@@ -1,6 +1,6 @@
 const userModel = require("../models/users");
 const bcrypt = require("bcrypt");
-const jwt = require("jsonwebtoken");
+const jwt = require('jsonwebtoken');
 
 exports.loginPost = async (request, response) => {
   try {
@@ -17,6 +17,8 @@ exports.loginPost = async (request, response) => {
       request.body.password,
       user.password
     )
+    console.log(request.body.password);
+    console.log(user.password);
 
     if (!isPasswordValide) {
       return response.status(401).send({
@@ -35,6 +37,7 @@ exports.loginPost = async (request, response) => {
         expiresIn: "24h",
       }
     );
+    
 
     response.header("Authorization", token).status(200).send({
       statusCode: 200,

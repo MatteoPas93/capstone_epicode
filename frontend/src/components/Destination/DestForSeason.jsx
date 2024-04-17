@@ -44,8 +44,8 @@ const Destinations = ({ season }) => {
       <div className="container-dest row mx-2 gap-1">
         {filteredDestinations &&
           filteredDestinations.map((dest) => (
-            <Link to={`/destination_details/${dest._id}`}>
-              <div key={dest._id} className="card-dest col-lg-2">
+            <Link key={dest._id} to={`/destination_details/${dest._id}`}>
+              <div  className="card-dest col-lg-2">
                 <h2> {dest.travel_location} </h2>
                 <img src={dest.cover_image} alt="cover" />
                 <h4> Prezzo: {dest.price}€ </h4>

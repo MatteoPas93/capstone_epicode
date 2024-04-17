@@ -1,0 +1,18 @@
+.text {
+    background: white;
+    padding: 5px;
+    margin-inline: 10px;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+
+.container-detail img {
+    border-radius: 5px;
+    border: 1px solid black;
+}
+
+.images-location img {
+    width: 100%;
+    object-fit: cover;
+    aspect-ratio: 2/1;
+}

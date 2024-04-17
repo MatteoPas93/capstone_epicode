@@ -1,5 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap');
 
+body {
+   /* background-image: url('https://i.pinimg.com/originals/a1/c5/27/a1c52787046b742e804fbc18b1ffd165.jpg'); */
+   background-image: url('https://wallpaperaccess.com/full/166556.jpg');
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-position: center;
+}
+
 .container-destinations {
     display: flex;
     flex-direction: column;
@@ -32,10 +40,11 @@
 }
 
 .container-slide {
+    /* background: rgb(255, 192, 239); */
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    border: 1px solid darkcyan;
+    border: 2px solid black;
     border-radius: 5px;
 }
 
@@ -43,7 +52,8 @@
     max-width: 250px;
     min-width: 180px;
     margin-inline: 10px;
-    border: 1px solid darkcyan;
+    background: rgb(255, 255, 255);
+    border: 1px solid black;
     border-radius: 5px;
     margin-block: 10px;
     
@@ -55,6 +65,10 @@
     border-radius: 0px 0px 5px 5px;
 } 
 
+.card_location h2 {
+    color: black;
+}
+
 .summer_destinations,
 .winter_destinations,
 .all_season_destinations {
@@ -63,12 +77,13 @@
     margin-block: 10px;
 }
 
+
 .information {
     width: 90%;
 }
 
 .information h4 {
-    border-bottom: 2px solid darkcyan;
+    border-bottom: 2px solid rgb(254, 144, 47);
 }
 
 .img-area img {
@@ -76,4 +91,18 @@
     object-fit: cover;
     aspect-ratio: 2/1;
     border-radius: 2px;
+    border: 1px solid black;
+}
+
+.text-area {
+    background: white;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+
+.title {
+    width: 50%;
+    background: white;
+    border-radius: 5px;
+    border: 1px solid black;
 }

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { getReviews } from "../axios_fetch/fetch";
 import axios from "axios";
 import './detail.css'
 
@@ -7,6 +8,7 @@ const DestinationDetail = () => {
   const { id } = useParams();
   const [destination, setDestination] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [allReviews, setAllReviews] = useState([]);
 
   const getDestination = async () => {
     try {
@@ -29,8 +31,23 @@ const DestinationDetail = () => {
       setLoading(false);
     }
   };
+
+  const reviews = async () => {
+    try {
+      const response = await getReviews();
+       
+      setAllReviews(response.data.destinations);
+      setLoading(false)
+      console.log(response.data);
+    } catch (error) {
+      console.error(error)
+      setLoading(false)
+    }
+  }
+
   useEffect(() => {
     getDestination();
+    reviews()
   }, [id]);
 
   if (loading) {
@@ -61,6 +78,14 @@ const DestinationDetail = () => {
           <div className="col-md-10">
           <p className="text"> {destination.main_attractions} </p>
         </div>
+      </div>
+      <div className="container-reviews">
+          {Array.isArray(allReviews) && allReviews.map((rev, i) => {
+            return <div key={i} className="card-review">
+                <h6> {rev.name} </h6>
+                <p> {rev.comment} </p>
+            </div>
+          })}
       </div>
     </>
   );

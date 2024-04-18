@@ -27,6 +27,32 @@ exports.getDestinationReviews = async (request, response) => {
   }
 };
 
+exports.getReviews = async (request, response) => {
+  const {page = 1, pageSize = 20} = request.query;
+  try {
+      const destinations = await reviewsModel
+        .find()
+        .limit(pageSize)
+        .skip((page - 1) * pageSize)
+        .sort({comment: 1});
+
+        const totalReviews = await reviewsModel.countDocuments();
+
+        response.status(200).send({
+          currentPage: page,
+          pageSize,
+          totalPages: Math.ceil(totalReviews / pageSize),
+          totalReviews: (totalReviews),
+          destinations
+        });
+  } catch (error) {
+      response.status(500).send({
+          statusCode: 500,
+          message: 'Internal Server Error'
+      });
+  };
+};
+
 exports.getReview = async (request, response) => {
   const { id } = request.params;
   try {

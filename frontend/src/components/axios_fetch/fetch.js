@@ -1,6 +1,6 @@
 import axios from "axios";
 
-// !Get Destinations
+// !GETE DESTINATIONS
 export const getDestinations = async () => {
   try {
     const response = await axios.get(
@@ -86,13 +86,12 @@ export const loginFetch = async (loginData) => {
     if (response.status === 500) {
       console.error("Internal Server Error", response.data);
     }
-    return response
+    return response;
   } catch (error) {
     console.error("Error login");
-    throw error
+    throw error;
   }
 };
-
 
 // !GET IMAGES
 export const getImages = async () => {
@@ -115,4 +114,71 @@ export const getImages = async () => {
     console.error("Error get winter location");
     throw error;
   }
-}
+};
+
+// ! DELETE DESTINATION
+export const deleteDestination = async (destId) => {
+  try {
+    const response = await axios.delete(
+      `${process.env.REACT_APP_SERVER_BASE_URL}/deleteDestination/${destId}`
+    );
+    if (response.status === 404) {
+      console.error("Page not found", response.data);
+    }
+    if (response.status === 401) {
+      console.error("No authorization", response.data);
+    }
+    if (response.status === 500) {
+      console.error("Internal Server Error", response.data);
+    }
+    if (response.status === 200) {
+      return alert("La destinazione è stata eliminata con successo!");
+    }
+  } catch (error) {
+    console.error(error);
+    return alert(`Errore durante l'eliminazione della destinazione!`);
+  }
+};
+
+// ! UPDATE PRICE
+export const updateDest = async (destId) => {
+  try {
+    const response = await axios.patch(
+      `${process.env.REACT_APP_SERVER_BASE_URL}/editDestination/${destId}`
+    );
+    if (response.status === 404) {
+      console.error("Page not found", response.data);
+    }
+    if (response.status === 401) {
+      console.error("No authorization", response.data);
+    }
+    if (response.status === 500) {
+      console.error("Internal Server Error", response.data);
+    }
+  } catch (error) {
+    console.error(`Error durante la modifica delle informazioni`);
+  }
+};
+
+// ! GET REVIEWS
+export const getReviews = async () => {
+  try {
+    const response = await axios.get(
+      `${process.env.REACT_APP_SERVER_BASE_URL}/getReviews`
+    );
+
+    if (response.status === 404) {
+      console.error("Page not found", response.data);
+    }
+    if (response.status === 401) {
+      console.error("No authorization", response.data);
+    }
+    if (response.status === 500) {
+      console.error("Internal Server Error", response.data);
+    }
+    return response;
+  } catch (error) {
+    console.error("Error get winter location");
+    throw error;
+  }
+};

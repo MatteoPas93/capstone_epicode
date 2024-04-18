@@ -38,7 +38,7 @@ Content-Type: application/json
 
 ####
 
-POST http://localhost:3029/addReview/6616a937e8c1fe38d3dac4f0/reviews/661556e743ece0502b142377
+POST http://localhost:3029/addReview/661a40d2feb1f986d6c0b9e9/reviews/661ceda3b8176522d2ed5d13
 Content-Type: application/json
 
 {
@@ -81,3 +81,7 @@ Content-Type: application/json
     "https://tse4.mm.bing.net/th?id=OIP.apOEsQDatiIbnvYyfFDnDQHaE8&pid=Api&P=0&h=180"
     ]
 }
+
+####
+
+GET http://localhost:3029/getReviews

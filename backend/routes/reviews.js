@@ -6,7 +6,9 @@ router.get('/getUserReviews/:id', reviewController.getUserReviews);
 
 router.get('/getDestinationReviews/:id', reviewController.getDestinationReviews );
 
-router.get('/getReview/:id/reviews/:reviewId', reviewController.getReview );
+router.get('/getReview/:id', reviewController.getReview );
+
+router.get('/getReviews', reviewController.getReviews);
 
 router.post('/addReview/:travelId/reviews/:userId', reviewController.addDestinationReviews );
 

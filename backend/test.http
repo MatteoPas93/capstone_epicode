@@ -28,7 +28,7 @@ POST http://localhost:3029/addUser
 Content-Type: application/json
 
 {
-   "name": "Marco",
+   "name": "Mao",
    "email": "provaEmail@secondaProva.it",
    "password": "prova",
 #    "role": "admin",

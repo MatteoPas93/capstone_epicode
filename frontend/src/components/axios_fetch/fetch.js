@@ -18,7 +18,7 @@ export const getDestinations = async () => {
     }
     return response;
   } catch (error) {
-    console.error("Error get winter location");
+    console.error("Error get destinations");
     throw error;
   }
 };
@@ -47,10 +47,10 @@ export const addUser = async (userData) => {
 };
 
 // ! CREATE REVIEW
-export const addReview = async (reviewData) => {
+export const addReview = async (reviewData, destId, userId) => {
   try {
     const response = await axios.post(
-      `${process.env.REACT_APP_SERVER_BASE_URL}/addReview`,
+      `${process.env.REACT_APP_SERVER_BASE_URL}/addReview/${destId}/reviews/${userId}`,
       reviewData
     );
     if (response.status === 404) {
@@ -179,6 +179,52 @@ export const getReviews = async () => {
     return response;
   } catch (error) {
     console.error("Error get winter location");
+    throw error;
+  }
+};
+
+// !GET DESTINATION REVIEWS
+export const getDestReviews = async (destId) => {
+  try {
+    const response = await axios.get(
+      `${process.env.REACT_APP_SERVER_BASE_URL}/getDestinationReviews/${destId}`
+    );
+    if (response.status === 404) {
+      console.error("Page not found", response.data);
+    }
+    if (response.status === 401) {
+      console.error("No authorization", response.data);
+    }
+    if (response.status === 500) {
+      console.error("Internal Server Error", response.data);
+    }
+    return response;
+  } catch (error) {
+    console.error("Error get reviews");
+    throw error;
+  }
+};
+
+// !GET USERS
+
+export const getUsers = async () => {
+  try {
+    const response = await axios.get(
+      `${process.env.REACT_APP_SERVER_BASE_URL}/getUsers`
+    );
+
+    if (response.status === 404) {
+      console.error("Page not found", response.data);
+    }
+    if (response.status === 401) {
+      console.error("No authorization", response.data);
+    }
+    if (response.status === 500) {
+      console.error("Internal Server Error", response.data);
+    }
+    return response;
+  } catch (error) {
+    console.error("Error get users");
     throw error;
   }
 };

@@ -22,7 +22,7 @@ const Login = () => {
     const response = await loginFetch(formData);
     console.log(response);
     if (response.data && response.data.token) {
-      localStorage.setItem("auth", JSON.stringify(response.token));
+      localStorage.setItem("auth", JSON.stringify(response.data.token));
       setTimeout(() => {
         navigate("/");
       }, 1500);

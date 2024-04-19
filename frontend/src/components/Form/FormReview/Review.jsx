@@ -1,28 +1,30 @@
 import React, { useState } from "react";
-import { addReview } from "../../axios_fetch/fetch";
-import { Form, Row, Col, Button, InputGroup } from "react-bootstrap";
+import { addReview, getUsers } from "../../axios_fetch/fetch";
+import { Form, Row, Col, Button } from "react-bootstrap";
+import { useParams } from "react-router-dom";
 
 const AddReviewForm = () => {
-  const [validated, setValidated] = useState(false);
+  const {id} = useParams();
   const [formData, setFormData] = useState({
     comment: "",
     evaluation_score: "",
   });
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    const form = event.currentTarget;
-    // if (form.checkValidity() === false) {
-    //   event.stopPropagation();
-    // } else {
-      try {
-        await addReview(formData);
-      } catch (error) {
-        console.error(error);
-    //   }
+  const addRev = async() => {
+    try {
+      
+      const usersResponse = await getUsers();
+      const usersData = usersResponse.data;
+
+      const userId = usersData._id;
+      const destId = id;
+
+      const reviewResponse = await addReview(destId, userId, formData);
+      setFormData(reviewResponse.data)
+    } catch (error) {
+      console.error(error);
     }
-    setValidated(true);
-  };
+  }
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -32,13 +34,18 @@ const AddReviewForm = () => {
     });
   };
 
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    addRev()
+  }
+
   return (
-    <Form noValidate validated={validated} onSubmit={handleSubmit}>
+    <Form noValidate onSubmit={handleSubmit}>
       <Row className="mb-3 flex-column ml-1">
         <Form.Group as={Col} md="4" controlId="validationCustom01">
           <Form.Label>Recensione</Form.Label>
           <Form.Control
-            name="review"
+            name="comment"
             required
             type="text"
             placeholder="Inserisci una recensione"
@@ -50,7 +57,7 @@ const AddReviewForm = () => {
         <Form.Group as={Col} md="4" controlId="validationCustom02">
           <Form.Label>Valutazione</Form.Label>
           <Form.Control
-            name="score"
+            name="evaluation_score"
             required
             type="text"
             placeholder="Inserisci la tua valutazione"
@@ -60,17 +67,11 @@ const AddReviewForm = () => {
           <Form.Control.Feedback>✓</Form.Control.Feedback>
         </Form.Group>
       </Row>
-      {/* <Form.Group className="mb-3 ml-3">
-        <Form.Check
-          required
-          label="Agree to terms and conditions"
-          feedback="You must agree before submitting."
-          feedbackType="invalid"
-        />
-      </Form.Group> */}
-      <Button className="ml-3" type="submit" onClick={navigateHome}>
+      <Button className="ml-3" type="submit" >
         Invia recensione
       </Button>
     </Form>
   );
 };
+
+export default AddReviewForm;

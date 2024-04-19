@@ -16,3 +16,19 @@
     object-fit: cover;
     aspect-ratio: 2/1;
 }
+
+.title_reviews {
+    width: 80%;
+}
+
+.container-reviews {
+    width: 80%;
+    margin-block: 40px;
+}
+
+.card-review {
+    border: 1px solid black;
+    width: 250px;
+    padding: 5px;
+    border-radius: 5px;
+}

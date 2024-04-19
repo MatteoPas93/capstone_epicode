@@ -1,4 +1,5 @@
 const userModel = require("../models/users");
+const bcrypt = require('bcrypt');
 
 exports.getUsers = async (request, response) => {
   try {
@@ -33,10 +34,12 @@ exports.getUser = async (request, response) => {
 };
 
 exports.postUser = async (request, response) => {
+  const salt = await bcrypt.genSalt(10);
+  const hashedPassword = await bcrypt.hash(request.body.password, salt);
   const newUser = new userModel({
     name: request.body.name,
     email: request.body.email,
-    password: request.body.password,
+    password: hashedPassword,
     role: request.body.role,
     birthday: request.body.birthday,
     avatar: request.body.avatar,

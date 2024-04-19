@@ -2,20 +2,20 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { getDestReviews } from "../axios_fetch/fetch";
 import { getUsers } from "../axios_fetch/fetch";
-// import { addReview } from "../axios_fetch/fetch";
-// import AddReviewForm from "../Form/FormReview/Review";
+import AddReviewForm from "../Form/FormReview/AddReview";
 import axios from "axios";
 import "./detail.css";
+import {jwtDecode} from 'jwt-decode';
+
+
 
 const DestinationDetail = () => {
   const { id } = useParams();
   const [destination, setDestination] = useState(null);
   const [loading, setLoading] = useState(true);
   const [allReviews, setAllReviews] = useState([]);
-  // const [commentData, setCommentData] = useState({
-  //   comment: "",
-  //   evaluation_score: ""
-  // })
+  const [userId, setUserId] = useState("");
+ 
 
   const getDestination = async () => {
     try {
@@ -43,6 +43,11 @@ const DestinationDetail = () => {
     try {
       const userResponse = await getUsers();
       const userData = userResponse.data;
+      const token = localStorage.getItem('auth');
+      const decodedToken = jwtDecode(token);
+      const userId = decodedToken ? decodedToken.userId : "";
+      setUserId(userId)
+      console.log(userId);
 
       const reviewsResponse = await getDestReviews(destId);
       const reviewsData = reviewsResponse.data;
@@ -60,31 +65,11 @@ const DestinationDetail = () => {
     }
   };
 
-
-  // const addReviews = async() => {
-  //   try {
-  //     const usersResponse = await getUsers();
-  //     const usersData = usersResponse.data;
-      
-  //     const userId = usersData._id
-  //     const destId = id
-  //     const response = await addReview(destId, userId);
-  //     setCommentData(response.data)
-
-  //     getReviews(destId)
-  //   } catch (error) {
-  //     console.error(error);
-  //   }
-  // }
-
   useEffect(() => {
     getDestination();
     getReviews(id);
   }, [id]);
 
-  // const handleSubmitAddReview = () => {
-  //   addReviews()
-  // }
 
   if (loading) {
     return <div> Caricamento... </div>;
@@ -122,9 +107,9 @@ const DestinationDetail = () => {
           <p className="text"> {destination.main_attractions} </p>
         </div>
       <div className="container-reviews">
-        {/* <div>
-          {<AddReviewForm destId={id} userId />}
-        </div> */}
+        <div>
+          {<AddReviewForm destId={destination._id} userId={userId} />}
+        </div>
       <div className="title-reviews text-center mb-5">
         <h2> Recensioni relative a {destination.travel_location}: {allReviews.length} </h2>
         </div>

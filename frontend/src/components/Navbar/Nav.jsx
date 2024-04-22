@@ -2,8 +2,20 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
+import { useNavigate } from "react-router-dom";
 
 const NavigationBar = () => {
+  const isLoggedIn = localStorage.getItem('auth') !== null;
+
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    localStorage.removeItem('auth');
+    setTimeout(() => {
+      navigate('/')
+    }, 1500)
+  }
+
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container>
@@ -29,8 +41,13 @@ const NavigationBar = () => {
             </Nav>
           </div>
           <div className="d-flex gap-5 ps-2">
-          <Nav.Link  href="/login">Registrati o Accedi</Nav.Link>
+          {!isLoggedIn && (
+              <Nav.Link href="/login">Registrati o Accedi</Nav.Link>
+            )}
           <Nav.Link  href="/management">Pagina di Gestione</Nav.Link>
+          {isLoggedIn && (
+            <Nav.Link onClick={handleLogout}> Logout </Nav.Link>
+          )}
           </div>
         </Navbar.Collapse>
       </Container>

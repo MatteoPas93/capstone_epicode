@@ -44,7 +44,7 @@ const DestinationDetail = () => {
       const userResponse = await getUsers();
       const userData = userResponse.data;
       const token = localStorage.getItem('auth');
-      const decodedToken = jwtDecode(token);
+      const decodedToken = token ? jwtDecode(token) : null;
       const userId = decodedToken ? decodedToken.userId : "";
       setUserId(userId)
       console.log(userId);

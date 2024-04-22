@@ -7,6 +7,7 @@ import UpdateDest from "../Form/FormUpdate/FormUpdateDest";
 const DestinationManagement = () => {
   const [destinations, setDestinations] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [price, setPrice] = useState(0);
 
   const fetchDest = async () => {
     try {
@@ -40,6 +41,14 @@ const DestinationManagement = () => {
       return <div> Nessuna destinazione trovata! </div>;
     }
 
+    const handlePriceUpdate = (newPrice) => {
+     setPrice({
+      ...price,
+      newPrice
+     })
+     window.location.reload()
+    };
+
     return (
       <div className="container-destinations d-flex w-100 gap-4 justify-content-evenly flex-wrap flex-row">
         {destinations &&
@@ -52,7 +61,7 @@ const DestinationManagement = () => {
                   <h6>Prezzo: {dest.price}</h6>
                 </div>
                 <div className="col-md-6 button-edit">
-                  {<UpdateDest destId={dest._id}/>} 
+                  {<UpdateDest destId={dest._id} currentPrice={price[dest._id] || dest.price} onPriceUpdate={handlePriceUpdate}/>} 
                 </div>
               </div>
               <div className="button-delete pb-2 pt-2">

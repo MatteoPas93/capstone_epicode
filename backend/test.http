@@ -28,10 +28,10 @@ POST http://localhost:3029/addUser
 Content-Type: application/json
 
 {
-   "name": "Mao",
-   "email": "provaEmail@secondaProva.it",
+   "name": "Maoc",
+   "email": "questaemaildiprova@email.it",
    "password": "prova",
-#    "role": "admin",
+   "role": "admin",
    "birthday": "04/12/1994",
    "avatar": "M"
 }

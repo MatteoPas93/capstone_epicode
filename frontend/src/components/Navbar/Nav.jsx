@@ -1,17 +1,32 @@
+import React, {useState, useEffect} from "react";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import { useNavigate } from "react-router-dom";
+import { jwtDecode } from "jwt-decode";
 
 const NavigationBar = () => {
-  const isLoggedIn = localStorage.getItem('auth') !== null;
+  // const isLoggedIn = localStorage.getItem('auth') !== null;
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isAdmin, setIsAdmin] = useState(false);
+
+  useEffect(() => {
+    const authToken = localStorage.getItem("auth");
+    setIsLoggedIn(authToken !== null);
+
+    if (authToken) {
+      const decodedToken = jwtDecode(authToken);
+      setIsAdmin(decodedToken.role === "admin");
+    }
+  }, []);
 
   const navigate = useNavigate();
 
   const handleLogout = () => {
     localStorage.removeItem('auth');
     setTimeout(() => {
+      setIsLoggedIn(false);
       navigate('/')
     }, 1500)
   }
@@ -44,7 +59,9 @@ const NavigationBar = () => {
           {!isLoggedIn && (
               <Nav.Link href="/login">Registrati o Accedi</Nav.Link>
             )}
-          <Nav.Link  href="/management">Pagina di Gestione</Nav.Link>
+          {isAdmin && (
+            <Nav.Link  href="/management">Pagina di Gestione</Nav.Link>
+          )}
           {isLoggedIn && (
             <Nav.Link onClick={handleLogout}> Logout </Nav.Link>
           )}

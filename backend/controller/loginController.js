@@ -29,6 +29,7 @@ exports.loginPost = async (request, response) => {
       userId: user._id,
       name: user.name,
       email: user.email,
+      role: user.role
     };
 
     const token = jwt.sign(tokenPayload, process.env.SECRET_KEY, {

@@ -5,10 +5,10 @@ import Modal from "react-bootstrap/Modal";
 import "bootstrap/dist/css/bootstrap.min.css";
 import axios from "axios";
 
-const UpdateDest = ({ destId }) => {
+const UpdateDest = ({ destId, currentPrice, onPriceUpdate }) => {
   const [validated, setValidated] = useState(false);
   const [formData, setFormData] = useState({
-    price: "",
+    price: currentPrice,
   });
   const [show, setShow] = useState(false);
 
@@ -43,7 +43,8 @@ const UpdateDest = ({ destId }) => {
           console.error("Internal Server Error", response.data);
         }
 
-        window.location.reload()
+        // window.location.reload()
+        onPriceUpdate(formData.price)
         handleClose();
       } catch (error) {
         console.error(error);
@@ -68,7 +69,7 @@ const UpdateDest = ({ destId }) => {
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Prezzo:</Modal.Title>
+          <Modal.Title>Inserisci il nuovo prezzo:</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form noValidate validated={validated} onSubmit={handleSubmit}>

@@ -15,6 +15,10 @@ body {
     width: 100%;
 }
 
+.size-font p{
+    font-size: 18pt;
+}
+
 .div-carousel {
     width: 100%;
 }
@@ -82,8 +86,9 @@ body {
     width: 90%;
 }
 
-.information h4 {
+.information h5 {
     border-bottom: 2px solid rgb(254, 144, 47);
+    font-size: 25pt;
 }
 
 .img-area img {

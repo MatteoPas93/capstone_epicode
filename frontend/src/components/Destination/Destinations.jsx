@@ -126,8 +126,8 @@ const Destinations = () => {
               <img key={index} src={image.image[5]} alt="img" />
             ))}
           </div>
-          <div className="text-area col-md-6">
-            <h5> Esplora il mondo con DreamsTravel: il tuo compagno affidabile per avventure senza confini, dove ogni viaggio diventa un sogno da realizzare. Scopri destinazioni mozzafiato, vivi esperienze uniche e lasciati trasportare in un universo di emozioni senza fine. Con DreamsTravel, il viaggio diventa la tua personale epopea, dove ogni istante è un'opportunità per creare ricordi indelebili e lasciare un'impronta indelebile nei tuoi sogni.</h5>
+          <div className="text-area col-md-6 size-font">
+            <p> Esplora il mondo con DreamsTravel: il tuo compagno affidabile per avventure senza confini, dove ogni viaggio diventa un sogno da realizzare. Scopri destinazioni mozzafiato, vivi esperienze uniche e lasciati trasportare in un universo di emozioni senza fine. Con DreamsTravel, il viaggio diventa la tua personale epopea, dove ogni istante è un'opportunità per creare ricordi indelebili e lasciare un'impronta indelebile nei tuoi sogni.</p>
           </div>
         </div>
         <div className="summer_destinations d-flex flex-column align-items-center">
@@ -144,8 +144,8 @@ const Destinations = () => {
           </Carousel>
         </div>
         <div className="information row align-items-center mt-4 mb-4">
-          <div className="text-area col-md-6">
-            <h4> Lascia a casa lo stress, ci occupiamo di tutto noi</h4>
+          <div className="text-area col-md-6 size-font">
+            <h5> Lascia a casa lo stress, ci occupiamo di tutto noi</h5>
             <p> Chi viaggia con DreamsTravel non viaggia mai da solo. Dal momento della partenza a quello del rientro, i nostri accompagnatori mettono a disposizione competenze, cultura e passione per rendere la tua esperienza indimenticabile. È come avere un compagno di viaggio in più, sempre pronto ad assisterti mentre vivi ogni momento al meglio.</p>
           </div>
           <div className="img-area col-md-6">
@@ -173,8 +173,8 @@ const Destinations = () => {
               <img key={index} src={image.image[3]} alt="img" />
             ))}
           </div>
-          <div className="text-area col-md-6">
-            <h5> Chi torna da un viaggio DreamsTravel porta con sé un ricordo indelebile. Lo dimostrano i tanti clienti affezionati che viaggiano con noi.</h5>
+          <div className="text-area col-md-6 size-font">
+            <p> Chi torna da un viaggio DreamsTravel porta con sé un ricordo indelebile. Lo dimostrano i tanti clienti affezionati che viaggiano con noi.</p>
           </div>
         </div>
         <div className="all_season_destinations d-flex flex-column align-items-center">

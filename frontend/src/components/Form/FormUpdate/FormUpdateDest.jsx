@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-// import { updateDest } from "../../axios_fetch/fetch";
 import { Button, Form, Row, Col } from "react-bootstrap";
 import Modal from "react-bootstrap/Modal";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -22,10 +21,6 @@ const UpdateDest = ({ destId, currentPrice, onPriceUpdate }) => {
       event.stopPropagation();
     } else {
       try {
-        // await updateDest(destId, {
-        //   price: formData.price
-        // });
-
         const response = await axios.patch(
           `${process.env.REACT_APP_SERVER_BASE_URL}/editDestination/${destId}`,
           {
@@ -42,8 +37,6 @@ const UpdateDest = ({ destId, currentPrice, onPriceUpdate }) => {
         if (response.status === 500) {
           console.error("Internal Server Error", response.data);
         }
-
-        // window.location.reload()
         onPriceUpdate(formData.price)
         handleClose();
       } catch (error) {

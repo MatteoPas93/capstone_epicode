@@ -1,9 +1,9 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
-import './nav.css';
+import "./nav.css";
 import { useNavigate } from "react-router-dom";
 import { jwtDecode } from "jwt-decode";
 
@@ -24,20 +24,26 @@ const NavigationBar = () => {
   const navigate = useNavigate();
 
   const handleLogout = () => {
-    localStorage.removeItem('auth');
+    localStorage.removeItem("auth");
     setTimeout(() => {
       setIsLoggedIn(false);
       setIsAdmin(false);
-      navigate('/')
-    }, 1500)
-  }
+      navigate("/");
+    }, 1500);
+  };
 
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container>
-        <Navbar.Brand className="title-dreams" href="/"> <h3>DreamsTravelAgency</h3></Navbar.Brand>
+        <Navbar.Brand className="title-dreams" href="/">
+          {" "}
+          <h3>DreamsTravelAgency</h3>
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse className="justify-content-between" id="basic-navbar-nav">
+        <Navbar.Collapse
+          className="justify-content-between"
+          id="basic-navbar-nav"
+        >
           <div>
             <Nav className="me-auto size-font">
               <Nav.Link href="/">Home</Nav.Link>
@@ -57,15 +63,31 @@ const NavigationBar = () => {
             </Nav>
           </div>
           <div className="d-flex gap-5 ps-2 size-font">
-          {!isLoggedIn && (
+            {!isLoggedIn && (
               <Nav.Link href="/login">Registrati o Accedi</Nav.Link>
             )}
-          {isAdmin && (
-            <Nav.Link  href="/management">Pagina di Gestione</Nav.Link>
-          )}
-          {isLoggedIn && (
-            <Nav.Link onClick={handleLogout}> Logout </Nav.Link>
-          )}
+            {isAdmin && (
+              <div className="cont-settings d-flex">
+                <div className="pe-1">
+              <Nav.Link href="/management">Pagina di Gestione</Nav.Link>
+              </div>
+              <div className="d-flex align-items-center">
+              <ion-icon className="icon-logout" name="settings-outline"></ion-icon>
+              </div>
+            </div>)}
+            {isLoggedIn && (
+              <div className="d-flex">
+                <div className="pe-1">
+                  <Nav.Link onClick={handleLogout}> Logout </Nav.Link>
+                </div>
+                <div className="d-flex align-items-center">
+                  <ion-icon
+                    className="icon-logout"
+                    name="log-out-outline"
+                  ></ion-icon>
+                </div>
+              </div>
+            )}
           </div>
         </Navbar.Collapse>
       </Container>

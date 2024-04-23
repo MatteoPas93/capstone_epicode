@@ -3,6 +3,7 @@ import { getDestinations } from "../axios_fetch/fetch";
 import "./adminDest.css";
 import { deleteDestination } from "../axios_fetch/fetch";
 import UpdateDest from "../Form/FormUpdate/FormUpdateDest";
+import AddDestForm from "../Form/FormAddDest/AddDestForm";
 
 const DestinationManagement = () => {
   const [destinations, setDestinations] = useState([]);
@@ -51,6 +52,10 @@ const DestinationManagement = () => {
 
     return (
       <div className="container-destinations d-flex w-100 gap-4 justify-content-evenly flex-wrap flex-row">
+         <div className="container-add-dest text-center">
+         <h3> Aggiungi/Modifica destinazioni:</h3>
+          {<AddDestForm/>} 
+          </div>
         {destinations &&
           destinations.map((dest, index) => (
             <div key={index} className="card-dest">

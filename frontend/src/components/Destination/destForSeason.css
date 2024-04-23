@@ -4,6 +4,10 @@ body {
     font-family: 'Caveat', cursive;
 } */
 
+body {
+    background-image: linear-gradient(to right bottom, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+}
+
 .container-dest {
     display: inline-block;
 }
@@ -13,6 +17,7 @@ body {
     display: inline-block;
     border: 1px solid darkcyan;
     border-radius: 5px;
+    background: white;
 }
 
 .card-dest img {

@@ -41,7 +41,7 @@ const Destinations = ({ season }) => {
 
   return (
     <>
-      <div className="container-dest row mx-2 gap-1">
+      <div className="container-dest row mx-2 gap-1 mt-4">
         {filteredDestinations &&
           filteredDestinations.map((dest) => (
             <Link key={dest._id} to={`/destination_details/${dest._id}`}>

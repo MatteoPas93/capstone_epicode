@@ -52,7 +52,7 @@ const DestinationManagement = () => {
 
     return (
       <div className="container-destinations d-flex w-100 gap-4 justify-content-evenly flex-wrap flex-row">
-         <div className="container-add-dest text-center">
+         <div className="container-add-dest text-center mt-4">
          <h3> Aggiungi/Modifica destinazioni:</h3>
           {<AddDestForm/>} 
           </div>

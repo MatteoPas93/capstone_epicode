@@ -37,7 +37,7 @@ const NavigationBar = () => {
       <Container>
         <Navbar.Brand className="title-dreams" href="/"> <h3>DreamsTravelAgency</h3></Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse  id="basic-navbar-nav">
+        <Navbar.Collapse className="justify-content-between" id="basic-navbar-nav">
           <div>
             <Nav className="me-auto size-font">
               <Nav.Link href="/">Home</Nav.Link>

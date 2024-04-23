@@ -7,6 +7,7 @@ const AddReviewForm = ({ userId, destId }) => {
     comment: "",
     evaluation_score: "",
   });
+  const [error, setError] = useState("")
 
   const addRev = async () => {
     try {
@@ -35,6 +36,12 @@ const AddReviewForm = ({ userId, destId }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+
+    if (formData.evaluation_score < 1 || formData.evaluation_score > 10) {
+      setError( alert("La valutazione deve essere compresa tra 1 e 10."));
+      return;
+    }
+    setError("");
     addRev();
   };
 

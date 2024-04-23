@@ -1,3 +1,7 @@
+body p {
+    font-size: 13pt;
+}
+
 .text {
     background: white;
     padding: 5px;

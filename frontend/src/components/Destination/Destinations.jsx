@@ -123,7 +123,7 @@ const Destinations = () => {
       <div className="information row align-items-center mt-4 mb-4">
         <div className="img-area col-md-6">
             {images && images.map((image, index) => (
-              <img key={index} src={image.image[5]} alt="img" />
+              <img key={index} src={image.image[14]} alt="img" />
             ))}
           </div>
           <div className="text-area col-md-6 size-font">

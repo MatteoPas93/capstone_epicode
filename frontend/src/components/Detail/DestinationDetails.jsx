@@ -42,14 +42,14 @@ const DestinationDetail = () => {
       const userData = userResponse.data;
       const token = localStorage.getItem("auth");
       const decodedToken = token ? jwtDecode(token) : null;
-      const userId = decodedToken ? decodedToken.userId : "";
-      setUserId(userId);
+      const firstUserId = decodedToken ? decodedToken.userId : "";
+      setUserId(firstUserId);
 
       const reviewsResponse = await getDestReviews(destId);
       const reviewsData = reviewsResponse.data;
 
-      const reviewsWithUserName = reviewsData.map((review) => {
-        const user = userData.find((user) => user.id === review.userId);
+      const reviewsWithUserName = reviewsData.map((review, counter) => {
+        const user = userData.find((userProva) => userProva._id === review.name);
         const userName = user ? user.name : "Utente anonimo";
         const userAvatar = user ? user.avatar : null;
         return { ...review, userName, userAvatar };

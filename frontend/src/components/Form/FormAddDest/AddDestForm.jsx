@@ -48,10 +48,9 @@ const AddDestForm = () => {
     });
   };
 
-  const navigateAdminPage = () => {
+  const navigateAdminPage = async () => {
     setTimeout(() => {
-      navigate("/management");
-      // window.location.reload()
+      window.location.reload()
     }, 1500);
   };
 

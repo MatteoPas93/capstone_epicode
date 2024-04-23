@@ -50,7 +50,7 @@ const DestinationDetail = () => {
 
       const reviewsWithUserName = reviewsData.map((review) => {
         const user = userData.find((user) => user.id === review.userId);
-        const userName = user ? user.name : "Anonymous user";
+        const userName = user ? user.name : "Utente anonimo";
         const userAvatar = user ? user.avatar : null;
         return { ...review, userName, userAvatar };
       });

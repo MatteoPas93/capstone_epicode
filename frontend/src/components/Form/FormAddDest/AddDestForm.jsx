@@ -51,6 +51,7 @@ const AddDestForm = () => {
   const navigateAdminPage = () => {
     setTimeout(() => {
       navigate("/management");
+      // window.location.reload()
     }, 1500);
   };
 
@@ -67,7 +68,7 @@ const AddDestForm = () => {
             value={formData.travel_location}
             onChange={handleChange}
           />
-          <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+          <Form.Control.Feedback>✓</Form.Control.Feedback>
         </Form.Group>
         <Form.Group as={Col} md="4" controlId="validationCustom02">
           <Form.Label>Prezzo</Form.Label>
@@ -79,7 +80,7 @@ const AddDestForm = () => {
             value={formData.price}
             onChange={handleChange}
           />
-          <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+          <Form.Control.Feedback>✓</Form.Control.Feedback>
         </Form.Group>
         <Form.Group as={Col} md="4" controlId="validationCustom03">
           <Form.Label>Immagine Copertina</Form.Label>
@@ -91,7 +92,7 @@ const AddDestForm = () => {
             value={formData.cover_image}
             onChange={handleChange}
           />
-          <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+          <Form.Control.Feedback>✓</Form.Control.Feedback>
         </Form.Group>
         <Form.Group as={Col} md="4" controlId="validationCustom04">
           <Form.Label>Immagini per la destinazione</Form.Label>
@@ -103,7 +104,7 @@ const AddDestForm = () => {
             value={formData.images_location}
             onChange={handleChange}
           />
-          <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+          <Form.Control.Feedback>✓</Form.Control.Feedback>
         </Form.Group>
         <Form.Group as={Col} md="4" controlId="validationCustom05">
           <Form.Label>Descrizione</Form.Label>
@@ -115,7 +116,7 @@ const AddDestForm = () => {
             value={formData.description}
             onChange={handleChange}
           />
-          <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+          <Form.Control.Feedback>✓</Form.Control.Feedback>
         </Form.Group>
         <Form.Group as={Col} md="4" controlId="validationCustom06">
           <Form.Label>Attrazioni principali</Form.Label>
@@ -127,7 +128,7 @@ const AddDestForm = () => {
             value={formData.main_attractions}
             onChange={handleChange}
           />
-          <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+          <Form.Control.Feedback>✓</Form.Control.Feedback>
         </Form.Group>
         <Form.Group as={Col} md="4" controlId="validationCustom07">
           <Form.Label>Stagione</Form.Label>
@@ -139,7 +140,7 @@ const AddDestForm = () => {
             value={formData.season}
             onChange={handleChange}
           />
-          <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+          <Form.Control.Feedback>✓</Form.Control.Feedback>
         </Form.Group>
       </Row>
       <Button className="ml-3" type="submit" onClick={navigateAdminPage}>

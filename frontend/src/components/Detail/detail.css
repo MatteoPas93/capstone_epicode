@@ -31,8 +31,10 @@ body p {
 }
 
 .card-review {
+    background: white;
     border: 1px solid black;
     width: 250px;
     padding: 5px;
     border-radius: 5px;
 }
+

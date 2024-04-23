@@ -37,7 +37,7 @@ const NavigationBar = () => {
       <Container>
         <Navbar.Brand className="title-dreams" href="/">
           {" "}
-          <h3>DreamsTravelAgency</h3>
+          <h3>DreamsTravel</h3>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse

@@ -32,52 +32,58 @@ const DestinationManagement = () => {
     } catch (error) {
       console.error(error);
     }
+  };
+
+  if (loading) {
+    return <div> Caricamento... </div>;
   }
 
-    if (loading) {
-      return <div> Caricamento... </div>;
-    }
+  if (!Array.isArray(destinations || destinations.length === 0)) {
+    return <div> Nessuna destinazione trovata! </div>;
+  }
 
-    if (!Array.isArray(destinations || destinations.length === 0)) {
-      return <div> Nessuna destinazione trovata! </div>;
-    }
-
-    const handlePriceUpdate = (newPrice) => {
-     setPrice({
+  const handlePriceUpdate = (newPrice) => {
+    setPrice({
       ...price,
-      newPrice
-     })
-     window.location.reload()
-    };
+      newPrice,
+    });
+    window.location.reload();
+  };
 
-    return (
-      <div className="container-destinations d-flex w-100 gap-4 justify-content-evenly flex-wrap flex-row">
-         <div className="container-add-dest text-center mt-4">
-         <h3> Aggiungi/Modifica destinazioni:</h3>
-          {<AddDestForm/>} 
-          </div>
-        {destinations &&
-          destinations.map((dest, index) => (
-            <div key={index} className="card-dest">
-              <h4> {dest.travel_location} </h4>
-              <img src={dest.cover_image} alt="cover" />
-              <div className="row align-items-center">
-                <div className="col-md-6">
-                  <h6>Prezzo: {dest.price}</h6>
-                </div>
-                <div className="col-md-6 button-edit">
-                  {<UpdateDest destId={dest._id} currentPrice={price[dest._id] || dest.price} onPriceUpdate={handlePriceUpdate}/>} 
-                </div>
+  return (
+    <div className="container-destinations d-flex w-100 gap-4 justify-content-evenly flex-wrap flex-row mb-4">
+      <div className="container-add-dest text-center mt-4">
+        <h3> Aggiungi/Modifica destinazioni:</h3>
+        {<AddDestForm />}
+      </div>
+      {destinations &&
+        destinations.map((dest, index) => (
+          <div key={index} className="card-dest">
+            <h4> {dest.travel_location} </h4>
+            <img src={dest.cover_image} alt="cover" />
+            <div className="row align-items-center">
+              <div className="col-md-6">
+                <h6>Prezzo: {dest.price}</h6>
               </div>
-              <div className="button-delete pb-2 pt-2">
-                <button type="button" onClick={() => deleteDest(dest._id)}>
-                  Elimina destinazione
-                </button>
+              <div className="col-md-6 button-edit">
+                {
+                  <UpdateDest
+                    destId={dest._id}
+                    currentPrice={dest.price}
+                    onPriceUpdate={handlePriceUpdate}
+                  />
+                }
               </div>
             </div>
-          ))}
-      </div>
-    );
-  };
+            <div className="button-delete pb-2 pt-2">
+              <button type="button" onClick={() => deleteDest(dest._id)}>
+                Elimina destinazione
+              </button>
+            </div>
+          </div>
+        ))}
+    </div>
+  );
+};
 
 export default DestinationManagement;

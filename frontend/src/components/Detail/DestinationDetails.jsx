@@ -113,18 +113,19 @@ const DestinationDetail = () => {
               {allReviews.length}{" "}
             </h2>
           </div>
+          <div className="d-flex gap-2">
           {Array.isArray(allReviews) &&
             allReviews.map((rev, i) => {
               return (
                 <div key={i} className="card-review">
                   <div className="name-avatar d-flex">
                     <div>
-                      <h6> {rev.userName} </h6>
-                    </div>
-                    <div>
                       {rev.userAvatar && (
                         <img src={rev.userAvatar} alt="User Avatar" />
                       )}
+                    </div>
+                    <div>
+                      <h6> {rev.userName} </h6>
                     </div>
                   </div>
                   <p> {rev.comment} </p>
@@ -133,6 +134,7 @@ const DestinationDetail = () => {
               );
             })}
         </div>
+      </div>
       </div>
     </>
   );

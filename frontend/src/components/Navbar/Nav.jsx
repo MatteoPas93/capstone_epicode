@@ -10,6 +10,7 @@ import { jwtDecode } from "jwt-decode";
 const NavigationBar = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isAdmin, setIsAdmin] = useState(false);
+  const [name, setName] = useState("");
 
   useEffect(() => {
     const authToken = localStorage.getItem("auth");
@@ -18,6 +19,10 @@ const NavigationBar = () => {
     if (authToken) {
       const decodedToken = jwtDecode(authToken);
       setIsAdmin(decodedToken.role === "admin");
+    }
+    if (authToken) {
+      const decodedName = jwtDecode(authToken);
+      setName(decodedName.name)
     }
   }, []);
 
@@ -66,8 +71,14 @@ const NavigationBar = () => {
             {!isLoggedIn && (
               <Nav.Link href="/login">Registrati o Accedi</Nav.Link>
             )}
-            {isAdmin && (
-              <div className="cont-settings d-flex">
+            
+            {isLoggedIn && (
+              <div className="d-flex">
+                <div className="pe-4">
+                  <p className="m-0"> Benvenuto {name} </p>
+                </div>
+                {isAdmin && (
+              <div className="cont-settings d-flex pe-4">
                 <div className="pe-1">
               <Nav.Link href="/management">Pagina di Gestione</Nav.Link>
               </div>
@@ -75,8 +86,6 @@ const NavigationBar = () => {
               <ion-icon className="icon-logout" name="settings-outline"></ion-icon>
               </div>
             </div>)}
-            {isLoggedIn && (
-              <div className="d-flex">
                 <div className="pe-1">
                   <Nav.Link onClick={handleLogout}> Logout </Nav.Link>
                 </div>

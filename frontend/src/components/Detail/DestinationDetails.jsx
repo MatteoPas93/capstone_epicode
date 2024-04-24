@@ -49,7 +49,7 @@ const DestinationDetail = () => {
       const reviewsData = reviewsResponse.data;
 
       const reviewsWithUserName = reviewsData.map((review, counter) => {
-        const user = userData.find((userProva) => userProva._id === review.name);
+        const user = userData.find((currentUser) => currentUser._id === review.name);
         const userName = user ? user.name : "Utente anonimo";
         const userAvatar = user ? user.avatar : null;
         return { ...review, userName, userAvatar };

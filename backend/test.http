@@ -2,20 +2,20 @@ POST http://localhost:3029/addDestination
 Content-Type: application/json
 
 {
-   "travel_location": "Vienna",
-    "price":239.00,
-    "cover_image": "https://tse1.mm.bing.net/th?id=OIP.rUclbL1c9hdkdAEbiLWrSgHaE8&pid=Api&P=0&h=180",
-    "images_location":["https://tse1.mm.bing.net/th?id=OIP.W-PLjvV6w8Pi4Nmg1RSfUgHaE6&pid=Api&P=0&h=180",
-    "https://tse1.mm.bing.net/th?id=OIP.9xbuhrruBORXoytCZlBo4gHaEo&pid=Api&P=0&h=180",
-    "https://tse1.mm.bing.net/th?id=OIP.AB29-LX3gI4bHSJSa2ORrAHaE5&pid=Api&P=0&h=180",
-    "https://tse3.mm.bing.net/th?id=OIP.T18Cddz7L6ZWVTSWxmvkQwHaE8&pid=Api&P=0&h=180",
-    "https://tse2.mm.bing.net/th?id=OIP.7hbgwzGHGgQBRIHa0nRuagHaEo&pid=Api&P=0&h=180"] ,
-    "description": "Città imperiale, patria della Secessione e della psicanalisi, Vienna offre ai suoi visitatori complessi museali, palazzi storici, giardini fioriti e un ricco calendario d’eventi. Con il Prater, i molti caffè, i locali di tendenza, l’isola del Danubio, la capitale fa godere momenti di cultura, svago, relax.",
-    "main_attractions": "Il duomo di Santo Stefano. Iniziato nel XII secolo, con interni rimaneggiati nei secoli fino al barocco, oggi è il simbolo di Vienna e il più importante monumento gotico dell’Austria. Dai 136,44 metri della torre più alta, a cui si sale con 343 gradini, si gode una vista sconfinata su tutta Vienna.La Hofburg, uno dei più grandi palazzi imperiali esistenti al mondo, per secoli residenza degli Ausburgo. Oggi potete visitare sontuosi edifici, con giardini, musei, gli appartamenti degli Asburgo, la Scuola di equitazione spagnola.",
+   "travel_location": "Praga",
+    "price":1130.00,
+    "cover_image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwQyw6r1ZBNvnzbuJzxwpy0satzevDBu8_dA&s",
+    "images_location":["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQW2Y1SQ-VdIl1ArDoakSVq8nHQ5dQJ8V5RQA&s",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQv4B_tO74h_GUrnrkeBeF4EG3puH1XO69og&s",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-Sgy-5un9sb6M2K4UY0t-uLroyaQwqLNNag&s",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXSNtB2YSoPUXEU0lI5iMyuCL9Z8J-QYL7lA&s",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTokSHzCwC4Fdd4Gh4Oz6KvqOmBvWDvqAoDLA&s",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBdk-OUAfR0oa0O-vexR-QzQ3DhmVpzUTISA&s"
+    
+    ] ,
+    "description": "Benvenuti nella fiabesca città di Praga, la 'Città delle Cento Guglie' e la capitale della Repubblica Ceca. Situata sulle sponde del fiume Moldava, Praga incanta i visitatori con il suo suggestivo skyline, le sue strade acciottolate e la sua ricca storia che risale a oltre mille anni fa. ",
+    "main_attractions": "La città è un centro culturale vibrante, con una ricca scena musicale, teatrale e artistica. I suoi numerosi teatri, gallerie d'arte e sale da concerto offrono spettacoli di alto livello e eventi culturali che attraggono visitatori da tutto il mondo.  Praga è una città che incanta e affascina con la sua bellezza, la sua storia e la sua cultura. È un luogo dove i visitatori possono immergersi nell'atmosfera magica di una città fiabesca e creare ricordi indelebili che rimarranno nel cuore per sempre.",
     "season" : "all_seasons"
-
-
-
 }
 
 ####

@@ -174,7 +174,7 @@ const Destinations = () => {
             ))}
           </div>
           <div className="text-area col-md-6 size-font">
-            <p> Chi torna da un viaggio DreamsTravel porta con sé un ricordo indelebile. Lo dimostrano i tanti clienti affezionati che viaggiano con noi.</p>
+            <p> Celebra la tua voglia di scoprire, immagina nuovi orizzonti e coltiva i tuoi sogni con DreamsTravel. Siamo qui per trasformare il desiderio di viaggiare in un'esperienza straordinaria, offrendoti le chiavi per aprire le porte del mondo. Ogni viaggio con noi è un invito a esplorare, a imparare e a connetterti con luoghi e culture nuove, mentre costruiamo insieme ricordi indelebili. Affida i tuoi sogni alla nostra passione e al nostro impegno: da ogni angolo del globo, ti aspettano avventure straordinarie con DreamsTravel.</p>
           </div>
         </div>
         <div className="all_season_destinations d-flex flex-column align-items-center">

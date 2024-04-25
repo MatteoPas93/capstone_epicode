@@ -1,0 +1,13 @@
+.container-offers {
+    width: 90%;
+}
+
+.offer-card {
+  max-width: 280px;
+  min-width: 150px;
+  text-align: center;
+  display: inline-block;
+  border: 3px solid rgba(255, 183, 0, 0.749);
+  border-radius: 5px;
+  background: white;
+}

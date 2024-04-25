@@ -5,6 +5,8 @@ body {
 } */
 
 body {
+  margin: 0;
+  padding: 0;
   background-image: linear-gradient(
     to right bottom,
     #051937,
@@ -13,16 +15,21 @@ body {
     #00bf72,
     #a8eb12
   );
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
 }
 
-.container-dest {
-  display: inline-block;
+.card-container {
+  width: 90%;
 }
 
 .card-dest {
+  max-width: 280px;
+  min-width: 150px;
   text-align: center;
   display: inline-block;
-  border: 1px solid darkcyan;
   border-radius: 5px;
   background: white;
 }

@@ -47,7 +47,8 @@ const RegistrationForm = () => {
   };
 
   return (
-    <div className="container-form">
+    <div className="w-100 d-flex justify-content-center">
+      <div className="container-form">
       <Form noValidate validated={validated} onSubmit={handleSubmit}>
         <Row className="mb-3 flex-column ml-1">
           <Form.Group as={Col} md="4" controlId="validationCustom01">
@@ -141,6 +142,7 @@ const RegistrationForm = () => {
           ></button>
         </div>
       )}
+    </div>
     </div>
   );
 };

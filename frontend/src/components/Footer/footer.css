@@ -1,0 +1,22 @@
+.footer {
+  border-top: 3px solid orange;
+  background: white;
+}
+
+.footer-logo {
+  width: 150px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.footer-logo img {
+  width: 100%;
+}
+
+.footer-links a {
+  color: black;
+}
+
+.footer-links a:hover {
+  color: orange;
+}

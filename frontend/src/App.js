@@ -7,6 +7,7 @@ import AllSeasonsDestPage from './pages/AllSeasonsPage'
 import RegistrationPage from "./pages/Registration.Page";
 import LoginPage from "./pages/LoginPage";
 import AdminPage from "./pages/AdminPage";
+import OffersPage from "./pages/OffersPage";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/summer_destinations" element={<SummerDestPage />}/>
           <Route path="/winter_destinations" element={<WinterDestPage />}/>
           <Route path="/all_seasons_destinations" element={<AllSeasonsDestPage />}/>
+          <Route path="/offers" element={<OffersPage/>}/>
           <Route path="/registration" element={<RegistrationPage />}/>
           <Route path="/management" element={<AdminPage/>}/>
        </Routes>

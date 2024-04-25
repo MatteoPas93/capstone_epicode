@@ -40,8 +40,9 @@ const Destinations = ({ season }) => {
   }
 
   return (
-    <>
-      <div className="container-dest row mx-2 mt-4 w-100">
+   
+      <div className="container-dest w-100 d-flex justify-content-center">
+        <div className="card-container d-flex flex-wrap justify-content-start gap-3 mt-4 ">
         {filteredDestinations &&
           filteredDestinations.map((dest) => (
             <Link key={dest._id} to={`/destination_details/${dest._id}`}>
@@ -53,7 +54,7 @@ const Destinations = ({ season }) => {
             </Link>
           ))}
       </div>
-    </>
+    </div>
   );
 };
 

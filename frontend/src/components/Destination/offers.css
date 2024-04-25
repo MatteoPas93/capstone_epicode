@@ -2,6 +2,10 @@
     width: 90%;
 }
 
+.title-offers {
+  color: white;
+}
+
 .offer-card {
   max-width: 280px;
   min-width: 150px;

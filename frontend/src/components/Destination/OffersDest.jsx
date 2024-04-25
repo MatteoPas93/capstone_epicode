@@ -20,7 +20,10 @@ const Offers = () => {
   console.log(offersFiltered);
 
   return (
-    <div className="container-page mt-3 d-flex justify-content-center w-100">
+    <div className="container-page mt-3 d-flex align-items-center w-100 flex-column">
+      <div className="title-offers w-100 text-center">
+      <h3>Viaggi in offerta:</h3>
+      </div>
         <div className="container-offers">
       {offersFiltered &&
         offersFiltered.map((offer) => (

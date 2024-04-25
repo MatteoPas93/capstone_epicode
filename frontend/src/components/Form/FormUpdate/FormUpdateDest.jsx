@@ -35,6 +35,8 @@ const UpdateDest = ({
           `${process.env.REACT_APP_SERVER_BASE_URL}/editDestination/${destId}`,
           {
             price: formData.price,
+            cover_image: formData.cover_image,
+            season: formData.season
           }
         );
 

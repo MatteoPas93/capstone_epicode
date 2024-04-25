@@ -4,6 +4,8 @@ import "./adminDest.css";
 import { deleteDestination } from "../axios_fetch/fetch";
 import UpdateDest from "../Form/FormUpdate/FormUpdateDest";
 import AddDestForm from "../Form/FormAddDest/AddDestForm";
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 const DestinationManagement = () => {
   const [destinations, setDestinations] = useState([]);
@@ -88,7 +90,7 @@ const DestinationManagement = () => {
               </div>
             </div>
             <div className="button-delete pb-2 pt-2">
-              <button type="button" onClick={() => deleteDest(dest._id)}>
+              <button type="button" className="btn btn-danger" onClick={() => deleteDest(dest._id)}>
                 Elimina destinazione
               </button>
             </div>

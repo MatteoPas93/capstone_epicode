@@ -78,10 +78,10 @@ const DestinationDetail = () => {
   return (
     <>
       <div className="row container-detail flex-column align-items-center flex-wrap w-100">
-        <div className="title-location col-md-6 text-center">
+        <div className="title-location col-md-6 text-center pt-3 pb-3">
           <h2> {destination.travel_location} </h2>
         </div>
-        <div className="col-lg-6">
+        <div className="col-lg-6 page-img">
           <img
             className="w-100 mb-2"
             src={destination.cover_image}
@@ -89,10 +89,10 @@ const DestinationDetail = () => {
           />
           <p className="text"> {destination.description} </p>
         </div>
-        <div className="col-lg-10 row gap-2 mb-2 flex-wrap justify-content-center">
+        <div className="row gap-2 mb-2 flex-wrap justify-content-center">
           {destination.images_location.map((image, index) => {
             return (
-              <div key={index} className="col-lg-3 images-location">
+              <div key={index} className="col-lg-3 col-md-6 images-location page-img">
                 {" "}
                 <img src={image} alt={`image_${index}`} />
               </div>
@@ -103,7 +103,7 @@ const DestinationDetail = () => {
           <p className="text"> {destination.main_attractions} </p>
         </div>
         <div className="container-reviews">
-          <div>
+          <div className="container-form-add col-lg-12 p-2">
             {<AddReviewForm destId={destination._id} userId={userId} />}
           </div>
           <div className="title-reviews text-center mb-5">
@@ -118,8 +118,8 @@ const DestinationDetail = () => {
             allReviews.map((rev, i) => {
               return (
                 <div key={i} className="card-review">
-                  <div className="name-avatar d-flex">
-                    <div>
+                  <div className="name-avatar d-flex align-items-center gap-2">
+                    <div id="avatar">
                       {rev.userAvatar && (
                         <img src={rev.userAvatar} alt="User Avatar" />
                       )}

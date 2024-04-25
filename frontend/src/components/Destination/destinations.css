@@ -1,114 +1,117 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap'); */
 
 body {
-   /* background-image: url('https://i.pinimg.com/originals/a1/c5/27/a1c52787046b742e804fbc18b1ffd165.jpg'); */
-   /* background-image: url('https://wallpaperaccess.com/full/166556.jpg'); */
-   background-size: cover;
-   background-repeat: no-repeat;
-   background-position: center;
+  /* background-image: url('https://i.pinimg.com/originals/a1/c5/27/a1c52787046b742e804fbc18b1ffd165.jpg'); */
+  /* background-image: url('https://wallpaperaccess.com/full/166556.jpg'); */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: linear-gradient(
+    to right bottom,
+    #051937,
+    #004d7a,
+    #008793,
+    #00bf72,
+    #a8eb12
+  );
 }
 
 .container-destinations {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
 }
-
-/* .size-font p{
-    font-size: 18pt;
-} */
 
 .div-carousel {
-    width: 100%;
+  width: 100%;
 }
 
-.carousel-control-next, .carousel-control-prev {
-    height: 100%;
+.carousel-control-next,
+.carousel-control-prev {
+  height: 100%;
 }
 
-.carousel-control-prev  {
-    background: darkcyan !important; 
-    width: 20px !important;
-    border-radius: 5px 0px 0px 5px;
+.carousel-control-prev {
+  background: darkcyan !important;
+  width: 20px !important;
+  border-radius: 5px 0px 0px 5px;
 }
 
 .carousel-control-next {
-    background: darkcyan !important;
-    width: 20px !important;
-    border-radius: 0px 5px 5px 0px;
+  background: darkcyan !important;
+  width: 20px !important;
+  border-radius: 0px 5px 5px 0px;
 }
 
 .carousel-indicators {
-    display: none !important;
+  display: none !important;
 }
 
 .container-slide {
-    /* background: rgb(255, 192, 239); */
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    border: 2px solid black;
-    border-radius: 5px;
+  /* background: rgb(255, 192, 239); */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  border: 2px solid black;
+  border-radius: 5px;
 }
 
 .card_location {
-    max-width: 250px;
-    min-width: 250px;
-    margin-inline: 10px;
-    background: rgb(255, 255, 255);
-    border: 1px solid black;
-    border-radius: 5px;
-    margin-block: 10px;
-    
+  max-width: 250px;
+  min-width: 250px;
+  margin-inline: 10px;
+  background: rgb(255, 255, 255);
+  border: 1px solid black;
+  border-radius: 5px;
+  margin-block: 10px;
 }
 
 .card_location img {
-    width: 100%;
-    border-radius: 0px 0px 5px 5px;
-    object-fit: cover;
-    aspect-ratio: 2/1;
-} 
+  width: 100%;
+  border-radius: 0px 0px 5px 5px;
+  object-fit: cover;
+  aspect-ratio: 2/1;
+}
 
 .card_location h2 {
-    color: black;
+  color: black;
 }
 
 .summer_destinations,
 .winter_destinations,
 .all_season_destinations {
-    width: 90%;
-    text-align: center;
-    margin-block: 10px;
+  width: 90%;
+  text-align: center;
+  margin-block: 10px;
 }
 
-
 .information {
-    width: 90%;
+  width: 90%;
 }
 
 .information h5 {
-    border-bottom: 2px solid rgb(254, 144, 47);
-    /* font-size: 25pt; */
+  border-bottom: 2px solid rgb(254, 144, 47);
+  /* font-size: 25pt; */
 }
 
 .img-area img {
-    width: 100%;
-    object-fit: cover;
-    aspect-ratio: 2/1;
-    border-radius: 2px;
-    border: 1px solid black;
+  width: 100%;
+  object-fit: cover;
+  aspect-ratio: 2/1;
+  border-radius: 2px;
+  border: 1px solid black;
 }
 
 .text-area {
-    background: white;
-    border-radius: 5px;
-    border: 1px solid black;
+  background: white;
+  border-radius: 5px;
+  border: 1px solid black;
 }
 
 .title {
-    width: 50%;
-    background: white;
-    border-radius: 5px;
-    border: 1px solid black;
+  width: 50%;
+  background: white;
+  border-radius: 5px;
+  border: 1px solid black;
 }

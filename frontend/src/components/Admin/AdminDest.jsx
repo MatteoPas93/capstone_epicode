@@ -9,6 +9,8 @@ const DestinationManagement = () => {
   const [destinations, setDestinations] = useState([]);
   const [loading, setLoading] = useState(true);
   const [price, setPrice] = useState(0);
+  const [image, setImage] = useState("");
+  const [season, setSeason] = useState("");
 
   const fetchDest = async () => {
     try {
@@ -42,11 +44,19 @@ const DestinationManagement = () => {
     return <div> Nessuna destinazione trovata! </div>;
   }
 
-  const handlePriceUpdate = (newPrice) => {
+  const handleInfoUpdate = (newPrice, newImage, newSeason) => {
     setPrice({
       ...price,
-      newPrice,
+      newPrice
     });
+    setImage({
+      ...image,
+      newImage
+    });
+    setSeason({
+      ...season,
+      newSeason
+    })
     window.location.reload();
   };
 
@@ -61,16 +71,18 @@ const DestinationManagement = () => {
           <div key={index} className="card-dest">
             <h4> {dest.travel_location} </h4>
             <img src={dest.cover_image} alt="cover" />
-            <div className="row align-items-center">
-              <div className="col-md-6">
+            <div className="row justify-content-center">
+              {/* <div className="col-md-6">
                 <h6>Prezzo: {dest.price}</h6>
-              </div>
+              </div> */}
               <div className="col-md-6 button-edit">
                 {
                   <UpdateDest
                     destId={dest._id}
                     currentPrice={dest.price}
-                    onPriceUpdate={handlePriceUpdate}
+                    currentImage={dest.cover_image}
+                    currentSeason={dest.season}
+                    onPriceUpdate={handleInfoUpdate}
                   />
                 }
               </div>

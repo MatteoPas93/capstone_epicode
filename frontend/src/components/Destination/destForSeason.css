@@ -5,23 +5,30 @@ body {
 } */
 
 body {
-    background-image: linear-gradient(to right bottom, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+  background-image: linear-gradient(
+    to right bottom,
+    #051937,
+    #004d7a,
+    #008793,
+    #00bf72,
+    #a8eb12
+  );
 }
 
 .container-dest {
-    display: inline-block;
+  display: inline-block;
 }
 
 .card-dest {
-    text-align: center;
-    display: inline-block;
-    border: 1px solid darkcyan;
-    border-radius: 5px;
-    background: white;
+  text-align: center;
+  display: inline-block;
+  border: 1px solid darkcyan;
+  border-radius: 5px;
+  background: white;
 }
 
 .card-dest img {
-    width: 100%;
-    object-fit: cover;
-    aspect-ratio: 2/1;
+  width: 100%;
+  object-fit: cover;
+  aspect-ratio: 2/1;
 }

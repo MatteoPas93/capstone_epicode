@@ -30,7 +30,7 @@ const Login = () => {
   };
 
   return (
-    <div className="container-login row justify-content-center mt-5">
+    <div className="container-login row justify-content-center pt-5 w-100">
       <div className="card-login col-md-6 d-flex align-items-center flex-wrap flex-column">
         <div>
         <h4>Effettua l'accesso</h4>

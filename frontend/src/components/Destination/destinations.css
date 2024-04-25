@@ -33,13 +33,13 @@ body {
 }
 
 .carousel-control-prev {
-  background: darkcyan !important;
+  background: orange !important;
   width: 20px !important;
   border-radius: 5px 0px 0px 5px;
 }
 
 .carousel-control-next {
-  background: darkcyan !important;
+  background: orange !important;
   width: 20px !important;
   border-radius: 0px 5px 5px 0px;
 }
@@ -49,17 +49,16 @@ body {
 }
 
 .container-slide {
-  /* background: rgb(255, 192, 239); */
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  border: 2px solid black;
+  /* border: 2px solid black; */
   border-radius: 5px;
 }
 
 .card_location {
   max-width: 250px;
-  min-width: 250px;
+  min-width: 280px;
   margin-inline: 10px;
   background: rgb(255, 255, 255);
   border: 4px solid rgba(255, 183, 0, 0.749);
@@ -69,6 +68,7 @@ body {
 
 .card_location img {
   width: 100%;
+  height: 100%;
   border-radius: 0px 0px 5px 5px;
   object-fit: cover;
   aspect-ratio: 2/1;

@@ -23,7 +23,7 @@ function Footer() {
             <h2 className="footer-heading">Navigazione</h2>
             <ul className="footer-links">
               <li><a href="/">Home</a></li>
-              <li><a href="/chi-siamo">Chi siamo</a></li>
+              <li><a href="/description_agency">Chi siamo</a></li>
               <li><a href="/offers">Offerte</a></li>
             </ul>
           </div>

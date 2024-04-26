@@ -2,13 +2,24 @@ import React from "react";
 import { useDestinationsContext } from "../Context/destinationsContext";
 import "./offers.css";
 import { Link } from "react-router-dom";
+import { Spinner } from "react-bootstrap";
 
 const Offers = () => {
   const { destinations, loading: destinationsLoading } =
     useDestinationsContext();
 
   if (destinationsLoading) {
-    return <div> Caricamento... </div>;
+    return (
+      <div className="spinner-loading">
+      {destinationsLoading && (
+        <div className="d-flex align-items-center">
+          <Spinner className="spin" animation="border" role="status" variant="warning">
+            <span className="visually-hidden">Caricamento...</span>
+          </Spinner>
+        </div>
+      )}
+    </div>
+    );
   }
 
   if (!Array.isArray(destinations) || destinations.length === 0) {

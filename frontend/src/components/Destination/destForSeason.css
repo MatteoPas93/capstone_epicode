@@ -39,3 +39,11 @@ body {
   object-fit: cover;
   aspect-ratio: 2/1;
 }
+
+.search-bar h6 {
+  color: white;
+}
+
+.search-bar input {
+  border-radius: 5px;
+}

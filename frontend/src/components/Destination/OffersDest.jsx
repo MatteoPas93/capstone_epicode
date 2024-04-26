@@ -17,7 +17,6 @@ const Offers = () => {
   const offersFiltered = destinations.filter(
     (dest) => dest.season === "offers"
   );
-  console.log(offersFiltered);
 
   return (
     <div className="container-page mt-3 d-flex align-items-center w-100 flex-column">

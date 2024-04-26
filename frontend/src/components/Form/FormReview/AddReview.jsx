@@ -43,6 +43,7 @@ const AddReviewForm = ({ userId, destId }) => {
     }
     setError("");
     addRev();
+    window.location.reload()
   };
 
   return (

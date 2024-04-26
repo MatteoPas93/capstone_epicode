@@ -28,12 +28,13 @@ POST http://localhost:3029/addUser
 Content-Type: application/json
 
 {
-   "name": "Maoc",
-   "email": "questaemaildiprova@email.it",
-   "password": "prova",
-   "role": "admin",
-   "birthday": "04/12/1994",
-   "avatar": "M"
+   "name": "Michela",
+   "email": "michela-personal@outlook.it",
+   "password": "mypassword",
+#    "role": "admin",
+   "birthday": "27/05/1994",
+   "avatar": "https://tse4.mm.bing.net/th?id=OIP.Ux62mZKkMxu5u1ahYPGRRQHaHa&pid=Api&P=0&h=180"
+#    "avatar": "https://tse4.mm.bing.net/th?id=OIP.JBpgUJhTt8cI2V05-Uf53AHaG1&pid=Api&P=0&h=180"
 }
 
 ####

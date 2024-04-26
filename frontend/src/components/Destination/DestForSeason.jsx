@@ -29,11 +29,12 @@ const Destinations = ({ season }) => {
   //     ? destinations
   //     : destinations.filter((dest) => dest.season.includes(season));
 
-  const filteredDestinations = destinations.filter((dest) =>
-  dest.season.includes(season)
-).filter((dest) =>
-  dest.travel_location.toLowerCase().includes(searchDest.toLowerCase())
-);
+  const filteredDestinations = destinations
+    .filter((dest) => dest.season.includes(season))
+    .filter((dest) =>
+      dest.travel_location.toLowerCase().includes(searchDest.toLowerCase())
+    );
+    
 
   if (loading) {
     return <div> Caricamento... </div>;

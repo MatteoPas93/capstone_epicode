@@ -5,6 +5,7 @@ import { getUsers } from "../axios_fetch/fetch";
 import AddReviewForm from "../Form/FormReview/AddReview";
 import axios from "axios";
 import "./detail.css";
+// import RatingStars from "./RatingStars";
 import { jwtDecode } from "jwt-decode";
 
 const DestinationDetail = () => {
@@ -49,10 +50,12 @@ const DestinationDetail = () => {
       const reviewsData = reviewsResponse.data;
 
       const reviewsWithUserName = reviewsData.map((review, counter) => {
-        const user = userData.find((currentUser) => currentUser._id === review.name);
+        const user = userData.find(
+          (currentUser) => currentUser._id === review.name
+        );
         const userName = user ? user.name : "Utente anonimo";
         const userAvatar = user ? user.avatar : null;
-        return { ...review, userName, userAvatar };
+        return { ...review, userName, userAvatar, showFullReview: false };
       });
       setAllReviews(reviewsWithUserName);
       setLoading(false);
@@ -66,6 +69,18 @@ const DestinationDetail = () => {
     getDestination();
     getReviews(id);
   }, [id]);
+
+  const toggleFullReview = (index) => {
+    setAllReviews((prevReviews) => {
+      const updatedReviews = prevReviews.map((review, i) => {
+        if (i === index) {
+          return { ...review, showFullReview: !review.showFullReview };
+        }
+        return review;
+      });
+      return updatedReviews;
+    });
+  };
 
   if (loading) {
     return <div> Caricamento... </div>;
@@ -83,7 +98,7 @@ const DestinationDetail = () => {
         </div>
         <div className="col-lg-6 page-img">
           <img
-            className="w-100 mb-2"
+            className="w-100 mb-2 cover-img"
             src={destination.cover_image}
             alt="location"
           />
@@ -92,7 +107,10 @@ const DestinationDetail = () => {
         <div className="row gap-2 mb-2 flex-wrap justify-content-center">
           {destination.images_location.map((image, index) => {
             return (
-              <div key={index} className="col-lg-3 col-md-6 images-location page-img">
+              <div
+                key={index}
+                className="col-lg-3 col-md-6 images-location page-img"
+              >
                 {" "}
                 <img src={image} alt={`image_${index}`} />
               </div>
@@ -114,6 +132,47 @@ const DestinationDetail = () => {
             </h2>
           </div>
           <div className="d-flex gap-2">
+            {Array.isArray(allReviews) &&
+              allReviews.map((rev, i) => {
+                return (
+                  <div key={i} className="card-review">
+                    <div className="name-avatar d-flex align-items-center gap-2">
+                      <div id="avatar">
+                        {rev.userAvatar && (
+                          <img src={rev.userAvatar} alt="User Avatar" />
+                        )}
+                      </div>
+                      <div>
+                      <h6> {rev.userName} </h6>
+                    </div>
+                    </div>
+                    {rev.showFullReview ? (
+                      <>
+                        <p>{rev.comment}</p>
+                        <button
+                          className="button-toggle"
+                          onClick={() => toggleFullReview(i)}
+                        >
+                          Mostra meno
+                        </button>
+                      </>
+                    ) : (
+                      <>
+                        <p>{rev.comment.slice(0, 80)}...</p>
+                        <button
+                          className="button-toggle"
+                          onClick={() => toggleFullReview(i)}
+                        >
+                          Mostra di più
+                        </button>
+                      </>
+                    )}
+                    <p>Valutazione: {rev.evaluation_score}/10</p>
+                  </div>
+                );
+              })}
+          </div>
+          {/* <div className="d-flex gap-2">
           {Array.isArray(allReviews) &&
             allReviews.map((rev, i) => {
               return (
@@ -130,11 +189,12 @@ const DestinationDetail = () => {
                   </div>
                   <p> {rev.comment} </p>
                   <p> Valutazione: {rev.evaluation_score}/10 </p>
+                  
                 </div>
               );
             })}
+        </div> */}
         </div>
-      </div>
       </div>
     </>
   );

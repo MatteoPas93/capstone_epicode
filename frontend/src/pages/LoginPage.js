@@ -10,7 +10,7 @@ const LoginPage = () => {
   useEffect(() => {
     setTimeout(() => {
       setCountFooter(true);
-    }, 1500);
+    }, 500);
   }, []);
   return (
     <>

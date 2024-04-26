@@ -31,7 +31,7 @@ const Offers = () => {
             <div className="offer-card">
               <h2> {offer.travel_location} </h2>
               <img src={offer.cover_image} alt="cover" />
-              <h4>
+              <h4> <del style={{color: 'red'}}>85</del>
                 {" "}
                 {offer.price}€ a notte{" "}
                 <svg

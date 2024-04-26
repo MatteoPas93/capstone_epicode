@@ -1,9 +1,13 @@
 import React from "react";
+import './description.css'
 
 const DescriptionAgency = () => {
   return (
-    <div>
+    <div className="d-flex flex-column align-items-center flex-wrap">
+      <div>
       <h2 style={{color: "white", padding: "10px"}}>Benvenuti in DreamsTravel: Esplora il Mondo con Noi!</h2>
+      </div>
+      <div>
       <p style={{color: "white", padding: "10px"}}>
         Sogni di viaggiare verso destinazioni esotiche, esplorare culture
         affascinanti e creare ricordi indimenticabili? Allora sei nel posto
@@ -26,7 +30,8 @@ const DescriptionAgency = () => {
         la nostra storia, la nostra filosofia e il nostro team. Siamo pronti a
         trasformare i tuoi sogni di viaggio in realtà!
       </p>
-      <button type="button"> <a href="/"> Home </a> </button>
+      </div>
+      <button className="button-home" type="button"> <a href="/"> Home </a> </button>
     </div>
   );
 };

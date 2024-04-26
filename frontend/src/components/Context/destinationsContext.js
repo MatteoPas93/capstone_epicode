@@ -17,7 +17,9 @@ export const DestinationsProvider = ({ children }) => {
     try {
       const response = await getDestinations();
       setDestinations(response.data.destinations);
-      setLoading(false);
+      setTimeout(() => {
+        setLoading(false);
+      }, 1000);
     } catch (error) {
       console.error("Error getting Destinations", error);
       setLoading(false);

@@ -17,7 +17,9 @@ export const ImagesProvider = ({ children }) => {
     try {
       const responseImg = await getImages();
       setImages(responseImg.data);
-      setLoading(false);
+      setTimeout(() => {
+        setLoading(false);
+      }, 1000);
     } catch (error) {
       console.error('Error getting Images', error);
       setLoading(false);

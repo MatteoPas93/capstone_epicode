@@ -7,6 +7,7 @@ import axios from "axios";
 import "./detail.css";
 // import RatingStars from "./RatingStars";
 import { jwtDecode } from "jwt-decode";
+import { Spinner } from "react-bootstrap";
 
 const DestinationDetail = () => {
   const { id } = useParams();
@@ -30,7 +31,9 @@ const DestinationDetail = () => {
         console.error("Internal Server Error", response.data);
       }
       setDestination(response.data);
-      setLoading(false);
+      setTimeout(() => {
+        setLoading(false);
+      }, 1000);
     } catch (error) {
       console.error("Error get destination", error);
       setLoading(false);
@@ -58,7 +61,9 @@ const DestinationDetail = () => {
         return { ...review, userName, userAvatar, showFullReview: false };
       });
       setAllReviews(reviewsWithUserName);
-      setLoading(false);
+      setTimeout(() => {
+        setLoading(false);
+      }, 1000);
     } catch (error) {
       console.error(error);
       setLoading(false);
@@ -83,7 +88,17 @@ const DestinationDetail = () => {
   };
 
   if (loading) {
-    return <div> Caricamento... </div>;
+    return (
+      <div className="spinner-loading">
+      {loading && (
+        <div className="d-flex align-items-center">
+          <Spinner className="spin" animation="border" role="status" variant="warning">
+            <span className="visually-hidden">Caricamento...</span>
+          </Spinner>
+        </div>
+      )}
+    </div>
+    );
   }
 
   if (!destination) {

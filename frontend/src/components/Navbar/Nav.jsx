@@ -65,6 +65,7 @@ const NavigationBar = () => {
                   Mete per tutto l'anno
                 </NavDropdown.Item>
               </NavDropdown>
+              <Nav.Link href="/offers">Offerte</Nav.Link>
             </Nav>
           </div>
           <div className="d-flex gap-5 ps-2 size-font">

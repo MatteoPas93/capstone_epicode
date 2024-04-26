@@ -47,3 +47,19 @@ body {
 .search-bar input {
   border-radius: 5px;
 }
+
+.no-destination {
+  color: white;
+}
+
+.spinner-loading {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.spin {
+  width: 300px;
+  height: 300px;
+}

@@ -5,6 +5,7 @@ import { deleteDestination } from "../axios_fetch/fetch";
 import UpdateDest from "../Form/FormUpdate/FormUpdateDest";
 import AddDestForm from "../Form/FormAddDest/AddDestForm";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { Spinner } from "react-bootstrap";
 
 
 const DestinationManagement = () => {
@@ -18,7 +19,9 @@ const DestinationManagement = () => {
     try {
       const response = await getDestinations();
       setDestinations(response.data.destinations);
-      setLoading(false);
+      setTimeout(() => {
+        setLoading(false);
+      }, 1000);
     } catch (error) {
       console.error("Error get destinations", error);
       setLoading(false);
@@ -39,7 +42,17 @@ const DestinationManagement = () => {
   };
 
   if (loading) {
-    return <div> Caricamento... </div>;
+    return (
+      <div className="spinner-loading">
+      {loading && (
+        <div className="d-flex align-items-center">
+          <Spinner className="spin" animation="border" role="status" variant="warning">
+            <span className="visually-hidden">Caricamento...</span>
+          </Spinner>
+        </div>
+      )}
+    </div>
+    );
   }
 
   if (!Array.isArray(destinations || destinations.length === 0)) {

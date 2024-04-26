@@ -6,6 +6,7 @@ import "./destinations.css";
 import Carousel from "react-bootstrap/Carousel";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Link } from "react-router-dom";
+import { Spinner } from "react-bootstrap";
 
 const Destinations = () => {
   const { destinations, loading: destinationsLoading } = useDestinationsContext();
@@ -28,7 +29,17 @@ const Destinations = () => {
 
 
   if (destinationsLoading || imagesLoading) {
-    return <div> Caricamento... </div>;
+    return (
+      <div className="spinner-loading">
+      {destinationsLoading && imagesLoading && (
+        <div className="d-flex align-items-center">
+          <Spinner className="spin" animation="border" role="status" variant="warning">
+            <span className="visually-hidden">Caricamento...</span>
+          </Spinner>
+        </div>
+      )}
+    </div>
+    );
   }
 
   if (!Array.isArray(destinations) || destinations.length === 0) {

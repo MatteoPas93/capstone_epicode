@@ -3,6 +3,7 @@ import { getDestinations } from "../axios_fetch/fetch";
 import { useState, useEffect } from "react";
 import "./destForSeason.css";
 import { Link } from "react-router-dom";
+import { Spinner } from "react-bootstrap";
 
 const Destinations = ({ season }) => {
   const [destinations, setDestinations] = useState([]);
@@ -13,7 +14,9 @@ const Destinations = ({ season }) => {
     try {
       const response = await getDestinations();
       setDestinations(response.data.destinations);
-      setLoading(false);
+      setTimeout(() => {
+        setLoading(false);
+      }, 1000);
     } catch (error) {
       console.error("Error get summer destinations");
       setLoading(false);
@@ -34,17 +37,41 @@ const Destinations = ({ season }) => {
     .filter((dest) =>
       dest.travel_location.toLowerCase().includes(searchDest.toLowerCase())
     );
-    
 
   if (loading) {
-    return <div> Caricamento... </div>;
+    return (
+      <div className="spinner-loading">
+      {loading && (
+        <div className="d-flex align-items-center">
+          <Spinner className="spin" animation="border" role="status" variant="warning">
+            <span className="visually-hidden">Caricamento...</span>
+          </Spinner>
+        </div>
+      )}
+    </div>
+    );
   }
 
   if (
     !Array.isArray(filteredDestinations) ||
     filteredDestinations.length === 0
   ) {
-    return <div> Nessuna destinazione trovata! </div>;
+    return (
+      <div className="no-destination d-flex flex-column align-items-center mt-4 search-bar">
+        <div className="mb-5">
+          <h6>Cerca la meta giusta per te:</h6>
+          <input
+            type="text"
+            placeholder="inserisci destinazione..."
+            value={searchDest}
+            onChange={(e) => setSearchDest(e.target.value)}
+          />
+        </div>
+        <div>
+          <h2>Nessuna destinazione trovata!</h2>
+        </div>
+      </div>
+    );
   }
 
   return (
@@ -64,7 +91,7 @@ const Destinations = ({ season }) => {
                 <div className="card-dest col-lg-2 mt-2 mb-2">
                   <h2> {dest.travel_location} </h2>
                   <img src={dest.cover_image} alt="cover" />
-                  <h4> Prezzo: {dest.price}€ </h4>
+                  <h4> Da {dest.price}€ a settimana </h4>
                 </div>
               </Link>
             ))}

@@ -78,7 +78,7 @@ export const loginFetch = async (loginData) => {
       loginData
     );
     if (response.status === 404) {
-      console.error("Page not found", response.data);
+      console.error("User not found", response.data);
     }
     if (response.status === 401) {
       console.error("No authorization", response.data);
@@ -88,7 +88,7 @@ export const loginFetch = async (loginData) => {
     }
     return response;
   } catch (error) {
-    console.error("Error login");
+    console.error("Error:", error);
     throw error;
   }
 };
@@ -228,3 +228,27 @@ export const getUsers = async () => {
     throw error;
   }
 };
+
+// !ADD DESTINATION
+
+export const addDestination = async(destinationData) => {
+  try {
+    const response = await axios.post(
+      `${process.env.REACT_APP_SERVER_BASE_URL}/addDestination`,
+      destinationData
+    );
+    if (response.status === 404) {
+      console.error("Page not Found", response.data);
+      return;
+    }
+    if (response.status === 401) {
+      console.error("No authorization", response.data);
+      return;
+    }
+    if (response.status === 500) {
+      console.error("Internal Server Error", response.data);
+    }
+  } catch (error) {
+    console.error(error);
+  }
+}

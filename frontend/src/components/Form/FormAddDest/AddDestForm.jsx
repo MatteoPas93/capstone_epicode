@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import { Form, Row, Col, Button } from "react-bootstrap";
-import axios from "axios";
+import { addDestination } from "../../axios_fetch/fetch";
 
 const AddDestForm = () => {
-
   const [formData, setFormData] = useState({
     travel_location: "",
     price: "",
@@ -17,21 +16,7 @@ const AddDestForm = () => {
   const addDest = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios.post(
-        `${process.env.REACT_APP_SERVER_BASE_URL}/addDestination`,
-        formData
-      );
-      if (response.status === 404) {
-        console.error("Page not Found", response.data);
-        return;
-      }
-      if (response.status === 401) {
-        console.error("No authorization", response.data);
-        return;
-      }
-      if (response.status === 500) {
-        console.error("Internal Server Error", response.data);
-      }
+      await addDestination(formData);
     } catch (error) {
       console.error(error);
     }
@@ -45,7 +30,7 @@ const AddDestForm = () => {
     setFormData({
       ...formData,
       [name]: value,
-      images_location: updatedImages
+      images_location: updatedImages,
     });
   };
 
@@ -57,7 +42,9 @@ const AddDestForm = () => {
   };
 
   const handleRemoveImage = (index) => {
-    const updatedImages = formData.images_location.filter((_, i) => i !== index);
+    const updatedImages = formData.images_location.filter(
+      (_, i) => i !== index
+    );
     setFormData({
       ...formData,
       images_location: updatedImages,
@@ -66,7 +53,7 @@ const AddDestForm = () => {
 
   const navigateAdminPage = async () => {
     setTimeout(() => {
-      window.location.reload()
+      window.location.reload();
     }, 1500);
   };
 
@@ -159,7 +146,10 @@ const AddDestForm = () => {
                 />
               </Col>
               <Col xs="auto">
-                <Button variant="danger" onClick={() => handleRemoveImage(index)}>
+                <Button
+                  variant="danger"
+                  onClick={() => handleRemoveImage(index)}
+                >
                   Rimuovi
                 </Button>
               </Col>
@@ -167,7 +157,9 @@ const AddDestForm = () => {
           </Form.Group>
         ))}
         <Col className="mt-4" md="4">
-          <Button variant="primary" onClick={handleAddImage}>Aggiungi immagini della destinazione</Button>
+          <Button variant="primary" onClick={handleAddImage}>
+            Aggiungi immagini della destinazione
+          </Button>
         </Col>
       </Row>
       <Button className="ml-3" type="submit" onClick={navigateAdminPage}>

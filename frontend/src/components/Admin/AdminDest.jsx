@@ -4,9 +4,8 @@ import "./adminDest.css";
 import { deleteDestination } from "../axios_fetch/fetch";
 import UpdateDest from "../Form/FormUpdate/FormUpdateDest";
 import AddDestForm from "../Form/FormAddDest/AddDestForm";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/css/bootstrap.min.css";
 import { Spinner } from "react-bootstrap";
-
 
 const DestinationManagement = () => {
   const [destinations, setDestinations] = useState([]);
@@ -44,14 +43,19 @@ const DestinationManagement = () => {
   if (loading) {
     return (
       <div className="spinner-loading">
-      {loading && (
-        <div className="d-flex align-items-center">
-          <Spinner className="spin" animation="border" role="status" variant="warning">
-            <span className="visually-hidden">Caricamento...</span>
-          </Spinner>
-        </div>
-      )}
-    </div>
+        {loading && (
+          <div className="d-flex align-items-center">
+            <Spinner
+              className="spin"
+              animation="border"
+              role="status"
+              variant="warning"
+            >
+              <span className="visually-hidden">Caricamento...</span>
+            </Spinner>
+          </div>
+        )}
+      </div>
     );
   }
 
@@ -62,34 +66,32 @@ const DestinationManagement = () => {
   const handleInfoUpdate = (newPrice, newImage, newSeason) => {
     setPrice({
       ...price,
-      newPrice
+      newPrice,
     });
     setImage({
       ...image,
-      newImage
+      newImage,
     });
     setSeason({
       ...season,
-      newSeason
-    })
+      newSeason,
+    });
     window.location.reload();
   };
 
   return (
-    <div className="container-destinations d-flex w-100 gap-4 justify-content-evenly flex-wrap flex-row mb-4">
+    <div className="container-destinations d-flex w-100 gap-3 justify-content-evenly flex-wrap flex-row mb-4">
       <div className="container-add-dest text-center mt-4">
         <h3> Aggiungi/Modifica destinazioni:</h3>
         {<AddDestForm />}
       </div>
+
       {destinations &&
         destinations.map((dest, index) => (
           <div key={index} className="card-dest">
             <h4> {dest.travel_location} </h4>
             <img src={dest.cover_image} alt="cover" />
             <div className="row justify-content-center">
-              {/* <div className="col-md-6">
-                <h6>Prezzo: {dest.price}</h6>
-              </div> */}
               <div className="col-md-6 button-edit">
                 {
                   <UpdateDest
@@ -103,7 +105,11 @@ const DestinationManagement = () => {
               </div>
             </div>
             <div className="button-delete pb-2 pt-2">
-              <button type="button" className="btn btn-danger" onClick={() => deleteDest(dest._id)}>
+              <button
+                type="button"
+                className="btn btn-danger"
+                onClick={() => deleteDest(dest._id)}
+              >
                 Elimina destinazione
               </button>
             </div>

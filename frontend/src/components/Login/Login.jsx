@@ -17,17 +17,37 @@ const Login = () => {
     });
   };
 
+  // const onSubmit = async (event) => {
+  //   event.preventDefault();
+  //   const response = await loginFetch(formData);
+  //   console.log(response);
+  //   if (response.data && response.data.token) {
+  //     localStorage.setItem("auth", JSON.stringify(response.data.token));
+  //     setTimeout(() => {
+  //       navigate("/");
+  //     }, 1500);
+  //   }
+  // };
+
   const onSubmit = async (event) => {
     event.preventDefault();
-    const response = await loginFetch(formData);
-    console.log(response);
-    if (response.data && response.data.token) {
-      localStorage.setItem("auth", JSON.stringify(response.data.token));
-      setTimeout(() => {
-        navigate("/");
-      }, 1500);
+    try {
+      const response = await loginFetch(formData);
+      if (response.data && response.data.token) {
+        localStorage.setItem("auth", JSON.stringify(response.data.token));
+        setTimeout(() => {
+          navigate("/");
+        }, 1500);
+      }
+    } catch (error) {
+      if (error.response && error.response.status === 401) {
+        alert('Email o password errati');
+      } else {
+        console.error("Error:", error);
+      }
     }
   };
+  
 
   return (
     <div className="container-login row justify-content-center pt-5 w-100">

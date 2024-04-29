@@ -20,7 +20,6 @@ function Footer() {
             </p>
           </div>
           <div className="col-md-4">
-            {/* <h2 className="footer-heading">Navigazione</h2> */}
             <ul className="footer-links">
               <li><a href="/">Home</a></li>
               <li><a href="/description_agency">Chi siamo</a></li>

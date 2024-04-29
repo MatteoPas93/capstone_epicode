@@ -1,12 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap');
 
-/* .title-dreams h3{
-    font-size: 20pt;
+.nav-logo {
+    width: 60px;
+    height: 60px;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-right: 10px;
 }
 
-.size-font {
-    font-size: 17pt;
-} */
+.nav-logo img {
+    width: 100%;
+}
 
 .icon-logout {
     width: 20px;

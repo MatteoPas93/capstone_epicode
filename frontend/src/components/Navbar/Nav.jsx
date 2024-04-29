@@ -40,6 +40,9 @@ const NavigationBar = () => {
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container>
+      <div className="nav-logo">
+              <img src="/logo_pers.png" alt="Logo agenzia viaggi" />
+            </div>
         <Navbar.Brand className="title-dreams" href="/">
           {" "}
           <h3>DreamsTravel</h3>

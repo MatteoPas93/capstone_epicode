@@ -53,7 +53,7 @@ const NavigationBar = () => {
           id="basic-navbar-nav"
         >
           <div>
-            <Nav className="me-auto size-font">
+            <Nav className="me-auto style-font">
               <Nav.Link href="/">Home</Nav.Link>
               <NavDropdown title="Destinazioni" id="basic-nav-dropdown">
                 <NavDropdown.Item href="/summer_destinations">
@@ -71,7 +71,7 @@ const NavigationBar = () => {
               <Nav.Link href="/offers">Offerte</Nav.Link>
             </Nav>
           </div>
-          <div className="d-flex gap-5 ps-2 size-font">
+          <div className="d-flex gap-5 ps-2 style-font">
             {!isLoggedIn && (
               <Nav.Link href="/login">Registrati o Accedi</Nav.Link>
             )}

@@ -16,3 +16,7 @@
     width: 20px;
     height: 20px;
 }
+
+.style-font a:hover {
+    color: orange;
+}

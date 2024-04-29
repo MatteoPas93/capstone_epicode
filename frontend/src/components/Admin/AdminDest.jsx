@@ -13,15 +13,14 @@ const DestinationManagement = () => {
   const [price, setPrice] = useState(0);
   const [image, setImage] = useState("");
   const [season, setSeason] = useState("");
-  const [currentPage, setCurrentPage] = useState(1);
-  const [totalPages, setTotalPages] = useState(1);
+  const [currentPage, setCurrentPage] = useState(0);
+  const [totalPages, setTotalPages] = useState();
 
   const fetchDest = async () => {
     try {
       const response = await getDestinations(currentPage);
       setDestinations(response.data.destinations);
       setTotalPages(response.data.totalPages);
-      console.log(totalPages);
       setTimeout(() => {
         setLoading(false);
       }, 1000);
@@ -44,8 +43,15 @@ const DestinationManagement = () => {
     }
   };
 
-  const handleNextPage = () => {
+  const handleNextPage = async () => {
     setCurrentPage(currentPage + 1);
+    console.log(currentPage);
+    try {
+      const response = await getDestinations(currentPage);
+      setDestinations(response.data.destinations);
+    } catch (error) {
+      console.error(error)
+    }
   };
 
   const handlePrevPage = () => {

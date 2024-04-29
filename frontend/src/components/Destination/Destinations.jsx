@@ -56,16 +56,21 @@ const Destinations = () => {
   const allSeasonSlides = [];
 
   for (let i = 0; i < destinations.length; i += 4) {
-    const group = destinations.slice(i, i + 4);
-    const summerFiltered = group.filter(
+    const summerFiltered = destinations.filter(
       (destination) => destination.season === "summer"
     );
+    const groupSummer = summerFiltered.slice(i, i + 4);
+    console.log(groupSummer.length);
 
-    if (summerFiltered.length > 0) {
+    // {summerFiltered.map(destination => {
+    //   console.log(destination._id)
+    // })}
+
+    if (groupSummer.length > 0) {
       const slideFirstCarousel = (
         <Carousel.Item key={i}>
           <div className="container-slide">
-            {summerFiltered.map((destination, index) => (
+            {groupSummer.map((destination, index) => (
               <Link
                 to={`/destination_details/${destination._id}`}
                 key={destination._id}
@@ -90,15 +95,18 @@ const Destinations = () => {
       );
       summerSlides.push(slideFirstCarousel);
     }
+  }
 
-    const winterFiltered = group.filter(
+  for (let i = 0; i < destinations.length; i += 4) {
+    const winterFiltered = destinations.filter(
       (destination) => destination.season === "winter"
     );
-    if (winterFiltered.length > 0) {
+    const groupWinter = winterFiltered.slice(i, i + 4);
+    if (groupWinter.length > 0) {
       const slideSecondCarousel = (
         <Carousel.Item key={i}>
           <div className="container-slide">
-            {winterFiltered.map((destination, index) => (
+            {groupWinter.map((destination, index) => (
               <Link
                 to={`/destination_details/${destination._id}`}
                 key={destination._id}
@@ -119,10 +127,13 @@ const Destinations = () => {
       );
       winterSlides.push(slideSecondCarousel);
     }
+  }
 
-    const allSeasonFiltered = group.filter(
+  for (let i = 0; i < destinations.length; i += 4) {
+    const allSeasonFiltered = destinations.filter(
       (destination) => destination.season === "all_seasons"
     );
+    const groupAll = allSeasonFiltered.slice(i, i + 4);
     if (allSeasonFiltered.length > 0) {
       const slideThirdCarousel = (
         <Carousel.Item key={i}>

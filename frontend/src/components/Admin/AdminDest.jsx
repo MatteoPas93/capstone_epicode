@@ -13,11 +13,15 @@ const DestinationManagement = () => {
   const [price, setPrice] = useState(0);
   const [image, setImage] = useState("");
   const [season, setSeason] = useState("");
+  const [currentPage, setCurrentPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(1);
 
   const fetchDest = async () => {
     try {
-      const response = await getDestinations();
+      const response = await getDestinations(currentPage);
       setDestinations(response.data.destinations);
+      setTotalPages(response.data.totalPages);
+      console.log(totalPages);
       setTimeout(() => {
         setLoading(false);
       }, 1000);
@@ -29,7 +33,7 @@ const DestinationManagement = () => {
 
   useEffect(() => {
     fetchDest();
-  }, []);
+  }, [currentPage]);
 
   const deleteDest = async (destId) => {
     try {
@@ -38,6 +42,14 @@ const DestinationManagement = () => {
     } catch (error) {
       console.error(error);
     }
+  };
+
+  const handleNextPage = () => {
+    setCurrentPage(currentPage + 1);
+  };
+
+  const handlePrevPage = () => {
+    setCurrentPage(currentPage - 1);
   };
 
   if (loading) {
@@ -80,42 +92,60 @@ const DestinationManagement = () => {
   };
 
   return (
-    <div className="container-destinations d-flex w-100 gap-3 justify-content-evenly flex-wrap flex-row mb-4">
-      <div className="container-add-dest text-center mt-4">
-        <h3> Aggiungi/Modifica destinazioni:</h3>
-        {<AddDestForm />}
-      </div>
+    <>
+      <div className="container-destinations d-flex w-100 gap-3 justify-content-evenly flex-wrap flex-row mb-4">
+        <div className="container-add-dest text-center mt-4">
+          <h3> Aggiungi/Modifica destinazioni:</h3>
+          {<AddDestForm />}
+        </div>
 
-      {destinations &&
-        destinations.map((dest, index) => (
-          <div key={index} className="card-dest">
-            <h4> {dest.travel_location} </h4>
-            <img src={dest.cover_image} alt="cover" />
-            <div className="row justify-content-center">
-              <div className="col-md-6 button-edit">
-                {
-                  <UpdateDest
-                    destId={dest._id}
-                    currentPrice={dest.price}
-                    currentImage={dest.cover_image}
-                    currentSeason={dest.season}
-                    onPriceUpdate={handleInfoUpdate}
-                  />
-                }
+        {destinations &&
+          destinations.map((dest, index) => (
+            <div key={index} className="card-dest">
+              <h4> {dest.travel_location} </h4>
+              <img src={dest.cover_image} alt="cover" />
+              <div className="row justify-content-center">
+                <div className="col-md-6 button-edit">
+                  {
+                    <UpdateDest
+                      destId={dest._id}
+                      currentPrice={dest.price}
+                      currentImage={dest.cover_image}
+                      currentSeason={dest.season}
+                      onPriceUpdate={handleInfoUpdate}
+                    />
+                  }
+                </div>
+              </div>
+              <div className="button-delete pb-2 pt-2">
+                <button
+                  type="button"
+                  className="btn btn-danger"
+                  onClick={() => deleteDest(dest._id)}
+                >
+                  Elimina destinazione
+                </button>
               </div>
             </div>
-            <div className="button-delete pb-2 pt-2">
-              <button
-                type="button"
-                className="btn btn-danger"
-                onClick={() => deleteDest(dest._id)}
-              >
-                Elimina destinazione
-              </button>
-            </div>
-          </div>
-        ))}
-    </div>
+          ))}
+      </div>
+      <div className="pagination-buttons d-flex justify-content-center gap-2">
+        <button
+          className="btn btn-primary"
+          onClick={handlePrevPage}
+          disabled={currentPage === 1}
+        >
+          Pagina precedente
+        </button>
+        <button
+          className="btn btn-primary"
+          onClick={handleNextPage}
+          disabled={currentPage === totalPages}
+        >
+          Pagina successiva
+        </button>
+      </div>
+    </>
   );
 };
 

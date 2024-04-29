@@ -134,11 +134,11 @@ const Destinations = () => {
       (destination) => destination.season === "all_seasons"
     );
     const groupAll = allSeasonFiltered.slice(i, i + 4);
-    if (allSeasonFiltered.length > 0) {
+    if (groupAll.length > 0) {
       const slideThirdCarousel = (
         <Carousel.Item key={i}>
           <div className="container-slide">
-            {allSeasonFiltered.map((destination, index) => (
+            {groupAll.map((destination, index) => (
               <Link
                 to={`/destination_details/${destination._id}`}
                 key={destination._id}

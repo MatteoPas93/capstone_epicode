@@ -157,7 +157,7 @@ const Destinations = () => {
           <div className="img-area col-md-6">
             {images &&
               images.map((image, index) => (
-                <img key={index} src={image.image[14]} alt="img" />
+                <img key={index} src={image.image[16]} alt="img" />
               ))}
           </div>
           <div className="text-area col-md-6 size-font mt-2">
@@ -223,7 +223,7 @@ const Destinations = () => {
           <div className="img-area col-md-6">
             {images &&
               images.map((image, index) => (
-                <img key={index} src={image.image[3]} alt="img" />
+                <img key={index} src={image.image[15]} alt="img" />
               ))}
           </div>
           <div className="text-area col-md-6 size-font mt-2">

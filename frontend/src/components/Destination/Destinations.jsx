@@ -160,7 +160,7 @@ const Destinations = () => {
                 <img key={index} src={image.image[14]} alt="img" />
               ))}
           </div>
-          <div className="text-area col-md-6 size-font">
+          <div className="text-area col-md-6 size-font mt-2">
             <p>
               {" "}
               Esplora il mondo con DreamsTravel: il tuo compagno affidabile per
@@ -187,7 +187,7 @@ const Destinations = () => {
           </Carousel>
         </div>
         <div className="information row align-items-center mt-4 mb-4">
-          <div className="text-area col-md-6 size-font">
+          <div className="text-area col-md-6 size-font mb-2">
             <h5> Lascia a casa lo stress, ci occupiamo di tutto noi</h5>
             <p>
               {" "}
@@ -226,7 +226,7 @@ const Destinations = () => {
                 <img key={index} src={image.image[3]} alt="img" />
               ))}
           </div>
-          <div className="text-area col-md-6 size-font">
+          <div className="text-area col-md-6 size-font mt-2">
             <p>
               {" "}
               Celebra la tua voglia di scoprire, immagina nuovi orizzonti e

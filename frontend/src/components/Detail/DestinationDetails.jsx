@@ -8,6 +8,7 @@ import "./detail.css";
 // import RatingStars from "./RatingStars";
 import { jwtDecode } from "jwt-decode";
 import { Spinner } from "react-bootstrap";
+import { Modal } from "react-bootstrap";
 
 const DestinationDetail = () => {
   const { id } = useParams();
@@ -15,6 +16,7 @@ const DestinationDetail = () => {
   const [loading, setLoading] = useState(true);
   const [allReviews, setAllReviews] = useState([]);
   const [userId, setUserId] = useState("");
+  const [selectedImage, setSelectedImage] = useState(null);
 
   const getDestination = async () => {
     try {
@@ -87,17 +89,29 @@ const DestinationDetail = () => {
     });
   };
 
+  const handleImageClick = (imageURL) => {
+    setSelectedImage(imageURL);
+  };
+  const handleCloseModal = () => {
+    setSelectedImage(null);
+  };
+
   if (loading) {
     return (
       <div className="spinner-loading">
-      {loading && (
-        <div className="d-flex align-items-center">
-          <Spinner className="spin" animation="border" role="status" variant="warning">
-            <span className="visually-hidden">Caricamento...</span>
-          </Spinner>
-        </div>
-      )}
-    </div>
+        {loading && (
+          <div className="d-flex align-items-center">
+            <Spinner
+              className="spin"
+              animation="border"
+              role="status"
+              variant="warning"
+            >
+              <span className="visually-hidden">Caricamento...</span>
+            </Spinner>
+          </div>
+        )}
+      </div>
     );
   }
 
@@ -125,12 +139,28 @@ const DestinationDetail = () => {
               <div
                 key={index}
                 className="col-lg-3 col-md-6 images-location page-img"
+                onClick={() => handleImageClick(image)}
               >
                 {" "}
                 <img src={image} alt={`image_${index}`} />
               </div>
             );
           })}
+          <Modal
+            className="modal-image"
+            show={selectedImage !== null}
+            onHide={handleCloseModal}
+          >
+            <Modal.Body>
+              {selectedImage && (
+                <img
+                  src={selectedImage}
+                  alt="Selected"
+                  className="img-fluid w-100"
+                />
+              )}
+            </Modal.Body>
+          </Modal>
         </div>
         <div className="col-md-10">
           <p className="text"> {destination.main_attractions} </p>
@@ -158,8 +188,8 @@ const DestinationDetail = () => {
                         )}
                       </div>
                       <div>
-                      <h6> {rev.userName} </h6>
-                    </div>
+                        <h6> {rev.userName} </h6>
+                      </div>
                     </div>
                     {rev.showFullReview ? (
                       <>
@@ -187,28 +217,6 @@ const DestinationDetail = () => {
                 );
               })}
           </div>
-          {/* <div className="d-flex gap-2">
-          {Array.isArray(allReviews) &&
-            allReviews.map((rev, i) => {
-              return (
-                <div key={i} className="card-review">
-                  <div className="name-avatar d-flex align-items-center gap-2">
-                    <div id="avatar">
-                      {rev.userAvatar && (
-                        <img src={rev.userAvatar} alt="User Avatar" />
-                      )}
-                    </div>
-                    <div>
-                      <h6> {rev.userName} </h6>
-                    </div>
-                  </div>
-                  <p> {rev.comment} </p>
-                  <p> Valutazione: {rev.evaluation_score}/10 </p>
-                  
-                </div>
-              );
-            })}
-        </div> */}
         </div>
       </div>
     </>

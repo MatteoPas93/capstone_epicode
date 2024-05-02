@@ -6,6 +6,7 @@ import UpdateDest from "../Form/FormUpdate/FormUpdateDest";
 import AddDestForm from "../Form/FormAddDest/AddDestForm";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Spinner } from "react-bootstrap";
+import axios from "axios";
 
 const DestinationManagement = () => {
   const [destinations, setDestinations] = useState([]);
@@ -13,12 +14,14 @@ const DestinationManagement = () => {
   const [price, setPrice] = useState(0);
   const [image, setImage] = useState("");
   const [season, setSeason] = useState("");
-  const [currentPage, setCurrentPage] = useState(0);
+  const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState();
 
   const fetchDest = async () => {
     try {
-      const response = await getDestinations(currentPage);
+      // const response = await getDestinations(currentPage);
+      const response = await axios.get(
+        `${process.env.REACT_APP_SERVER_BASE_URL}/getDestinations?page=${currentPage}`)
       setDestinations(response.data.destinations);
       setTotalPages(response.data.totalPages);
       setTimeout(() => {
@@ -44,18 +47,13 @@ const DestinationManagement = () => {
   };
 
   const handleNextPage = async () => {
-    setCurrentPage(currentPage + 1);
-    console.log(currentPage);
-    try {
-      const response = await getDestinations(currentPage);
-      setDestinations(response.data.destinations);
-    } catch (error) {
-      console.error(error)
-    }
+   setCurrentPage(currentPage + 1);
+    console.log("current", currentPage);
   };
 
-  const handlePrevPage = () => {
-    setCurrentPage(currentPage - 1);
+  const handlePrevPage = async () => {
+   setCurrentPage(currentPage - 1);
+    console.log("current", currentPage);
   };
 
   if (loading) {

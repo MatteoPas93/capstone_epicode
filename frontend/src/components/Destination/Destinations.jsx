@@ -60,11 +60,6 @@ const Destinations = () => {
       (destination) => destination.season === "summer"
     );
     const groupSummer = summerFiltered.slice(i, i + 4);
-    console.log(groupSummer.length);
-
-    // {summerFiltered.map(destination => {
-    //   console.log(destination._id)
-    // })}
 
     if (groupSummer.length > 0) {
       const slideFirstCarousel = (

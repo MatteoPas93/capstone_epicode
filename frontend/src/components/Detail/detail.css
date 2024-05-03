@@ -23,7 +23,8 @@ body p {
   min-width: 180px;
   max-width: 250px;
   object-fit: cover;
-  aspect-ratio: 2/1;
+  aspect-ratio: 16/12;
+  /* aspect-ratio: 16/9; */
   cursor: pointer;
 }
 
@@ -66,4 +67,8 @@ body p {
 .button-toggle {
   border-radius: 5px;
   background: orange;
+}
+
+.modal-content {
+  width: 600px;
 }

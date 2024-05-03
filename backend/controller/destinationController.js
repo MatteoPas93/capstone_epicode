@@ -1,5 +1,19 @@
 const destinationModel = require("../models/destination");
 
+
+exports.getAllDestinations = async (request, response) => {
+  try {
+    const destinations = await destinationModel.find();
+
+    response.status(200).send(destinations);
+  } catch (error) {
+    response.status(500).send({
+      statusCode: 500,
+      message: 'Internal Server Error'
+    });
+  };
+};
+
 exports.getDestinations = async (request, response) => {
   const { page = 1, pageSize = 20 } = request.query;
   try {

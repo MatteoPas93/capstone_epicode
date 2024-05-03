@@ -35,10 +35,10 @@ const Offers = () => {
       <div className="title-offers w-100 text-center mb-3">
         <h3>Viaggi in offerta: {offersFiltered.length} </h3>
       </div>
-      <div className="container-offers d-flex gap-3">
+      <div className="container-offers row gap-3 inline-block justify-content-center">
         {offersFiltered &&
           offersFiltered.map((offer) => (
-            <Link key={offer._id} to={`/destination_details/${offer._id}`}>
+            <Link className="offer" key={offer._id} to={`/destination_details/${offer._id}`}>
             <div className="offer-card">
               <h2> {offer.travel_location} </h2>
               <img src={offer.cover_image} alt="cover" />
@@ -50,7 +50,7 @@ const Offers = () => {
                   width="16"
                   height="16"
                   fill="currentColor"
-                  class="bi bi-emoji-surprise"
+                  className="bi bi-emoji-surprise"
                   viewBox="0 0 16 16"
                 >
                   <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />

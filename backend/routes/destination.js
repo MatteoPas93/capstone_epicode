@@ -2,6 +2,8 @@ const express = require('express');
 const router = express.Router();
 const DestinationController = require('../controller/destinationController');
 
+router.get('/getAllDestinations', DestinationController.getAllDestinations);
+
 router.get('/getDestinations', DestinationController.getDestinations);
 
 router.get('/getDestination/:id', DestinationController.getDestination);

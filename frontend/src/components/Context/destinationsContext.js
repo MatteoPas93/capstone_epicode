@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState, useEffect } from "react";
-import { getDestinations } from "../axios_fetch/fetch";
+import { getDestinations, getAllDest } from "../axios_fetch/fetch";
 
 const DestinationsContext = createContext();
 
@@ -15,8 +15,10 @@ export const DestinationsProvider = ({ children }) => {
 
   const fetchDest = async () => {
     try {
-      const response = await getDestinations();
-      setDestinations(response.data.destinations);
+      // const response = await getDestinations();
+      // setDestinations(response.data.destinations);
+      const response = await getAllDest();
+      setDestinations(response.data);
       setTimeout(() => {
         setLoading(false);
       }, 1000);

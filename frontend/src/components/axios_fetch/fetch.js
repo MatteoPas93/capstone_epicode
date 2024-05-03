@@ -1,6 +1,30 @@
 import axios from "axios";
 
-// !GETE DESTINATIONS
+// !GET ALL DESTINATIONS
+export const getAllDest = async() => {
+  try {
+    const response = await axios.get(
+      `${process.env.REACT_APP_SERVER_BASE_URL}/getAllDestinations`
+    );
+
+    if (response.status === 404) {
+      console.error("Page not found", response.data);
+    }
+    if (response.status === 401) {
+      console.error("No authorization", response.data);
+    }
+    if (response.status === 500) {
+      console.error("Internal Server Error", response.data);
+    }
+    return response;
+  } catch (error) {
+    console.error("Error get destinations");
+    throw error;
+  }
+}
+
+
+// !GET DESTINATIONS PAGE SIZE
 export const getDestinations = async () => {
   try {
     const response = await axios.get(

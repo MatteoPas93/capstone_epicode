@@ -1,5 +1,5 @@
 import React from "react";
-import { getDestinations } from "../axios_fetch/fetch";
+import { getAllDest, getDestinations } from "../axios_fetch/fetch";
 import { useState, useEffect } from "react";
 import "./destForSeason.css";
 import { Link } from "react-router-dom";
@@ -12,8 +12,10 @@ const Destinations = ({ season }) => {
 
   const fetchDest = async () => {
     try {
-      const response = await getDestinations();
-      setDestinations(response.data.destinations);
+      // const response = await getDestinations();
+      // setDestinations(response.data.destinations);
+      const response = await getAllDest();
+      setDestinations(response.data)
       setTimeout(() => {
         setLoading(false);
       }, 1000);
@@ -26,11 +28,6 @@ const Destinations = ({ season }) => {
   useEffect(() => {
     fetchDest();
   }, []);
-
-  // const filteredDestinations =
-  //   season === "all"
-  //     ? destinations
-  //     : destinations.filter((dest) => dest.season.includes(season));
 
   const filteredDestinations = destinations
     .filter((dest) => dest.season.includes(season))

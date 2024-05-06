@@ -1,13 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=Lobster&family=Permanent+Marker&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&family=Lobster&family=Permanent+Marker&display=swap");
+
 body p {
+  font-family: "Kalam", cursive;
   font-size: 13pt;
 }
 
 .title-location {
   color: white;
+  font-family: "Permanent Marker", cursive;
 }
 
 .text {
   background: white;
+  font-family: "Kalam", cursive;
   padding: 5px;
   margin-inline: 10px;
   border-radius: 5px;
@@ -24,12 +30,12 @@ body p {
   max-width: 250px;
   object-fit: cover;
   aspect-ratio: 16/12;
-  /* aspect-ratio: 16/9; */
   cursor: pointer;
 }
 
-.title_reviews {
-  width: 80%;
+.title-reviews h2 {
+  padding-top: 10px;
+  font-family: "Kalam", cursive;
 }
 
 .container-reviews {

@@ -66,7 +66,7 @@ const Destinations = () => {
         <Carousel.Item key={i}>
           <div className="container-slide">
             {groupSummer.map((destination, index) => (
-              <Link
+              <Link className="decoration-link"
                 to={`/destination_details/${destination._id}`}
                 key={destination._id}
               >
@@ -81,6 +81,7 @@ const Destinations = () => {
                     src={destination.cover_image}
                     alt="cover"
                   />
+                  <h6>A partire da {destination.price}€</h6>
                 </div>
               </Link>
             ))}
@@ -102,7 +103,7 @@ const Destinations = () => {
         <Carousel.Item key={i}>
           <div className="container-slide">
             {groupWinter.map((destination, index) => (
-              <Link
+              <Link className="decoration-link"
                 to={`/destination_details/${destination._id}`}
                 key={destination._id}
               >
@@ -113,6 +114,7 @@ const Destinations = () => {
                 >
                   <h2>{destination.travel_location}</h2>
                   <img src={destination.cover_image} alt="cover" />
+                  <h6>A partire da {destination.price}€</h6>
                 </div>
               </Link>
             ))}
@@ -134,7 +136,7 @@ const Destinations = () => {
         <Carousel.Item key={i}>
           <div className="container-slide">
             {groupAll.map((destination, index) => (
-              <Link
+              <Link className="decoration-link"
                 to={`/destination_details/${destination._id}`}
                 key={destination._id}
               >
@@ -145,6 +147,7 @@ const Destinations = () => {
                 >
                   <h2>{destination.travel_location}</h2>
                   <img src={destination.cover_image} alt="cover" />
+                  <h6>A partire da {destination.price}€</h6>
                 </div>
               </Link>
             ))}

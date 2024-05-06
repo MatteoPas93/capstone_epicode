@@ -1,20 +1,6 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap'); */
-
-body {
-  /* background-image: url('https://i.pinimg.com/originals/a1/c5/27/a1c52787046b742e804fbc18b1ffd165.jpg'); */
-  /* background-image: url('https://wallpaperaccess.com/full/166556.jpg'); */
-  /* background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-image: linear-gradient(
-    to right bottom,
-    #051937,
-    #004d7a,
-    #008793,
-    #00bf72,
-    #a8eb12
-  ); */
-}
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&family=Lobster&family=Permanent+Marker&display=swap');
 
 .container-destinations {
   display: flex;
@@ -74,7 +60,8 @@ body {
 }
 
 .card_location h2 {
-  color: black;
+  color: rgb(230, 169, 55);
+  font-family: "Permanent Marker", cursive;
 }
 
 .summer_destinations,
@@ -103,6 +90,7 @@ body {
 
 .text-area {
   background: white;
+  font-family: "Kalam", cursive;
   border-radius: 5px;
   border: 3px solid rgba(255, 183, 0, 0.749);
 }
@@ -111,4 +99,9 @@ body {
   width: 50%;
   border-radius: 5px;
   color: wheat;
+  font-family: "Lobster", sans-serif;
+}
+
+.decoration-link {
+  text-decoration: none;
 }

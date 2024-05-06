@@ -1,9 +1,13 @@
+@import url("https://fonts.googleapis.com/css2?family=Lobster&family=Permanent+Marker&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&family=Lobster&family=Permanent+Marker&display=swap");
+
 .container-offers {
     width: 90%;
 }
 
 .title-offers {
   color: white;
+  font-family: "Kalam", cursive;
 }
 
 .offer-card {
@@ -14,6 +18,16 @@
   border: 3px solid rgba(255, 183, 0, 0.749);
   border-radius: 5px;
   background: white;
+  transition: 0.5s ease;
+}
+
+.offer-card:hover {
+  transform: scale(1.05);
+}
+
+.offer-card h2 {
+  font-family: "Permanent Marker", cursive;
+  color: rgb(0, 226, 0);
 }
 
 .offer-card img {

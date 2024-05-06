@@ -1,5 +1,5 @@
 import React from "react";
-import { getAllDest, getDestinations } from "../axios_fetch/fetch";
+import { getAllDest } from "../axios_fetch/fetch";
 import { useState, useEffect } from "react";
 import "./destForSeason.css";
 import { Link } from "react-router-dom";
@@ -12,10 +12,8 @@ const Destinations = ({ season }) => {
 
   const fetchDest = async () => {
     try {
-      // const response = await getDestinations();
-      // setDestinations(response.data.destinations);
       const response = await getAllDest();
-      setDestinations(response.data)
+      setDestinations(response.data);
       setTimeout(() => {
         setLoading(false);
       }, 1000);
@@ -38,14 +36,19 @@ const Destinations = ({ season }) => {
   if (loading) {
     return (
       <div className="spinner-loading">
-      {loading && (
-        <div className="d-flex align-items-center">
-          <Spinner className="spin" animation="border" role="status" variant="warning">
-            <span className="visually-hidden">Caricamento...</span>
-          </Spinner>
-        </div>
-      )}
-    </div>
+        {loading && (
+          <div className="d-flex align-items-center">
+            <Spinner
+              className="spin"
+              animation="border"
+              role="status"
+              variant="warning"
+            >
+              <span className="visually-hidden">Caricamento...</span>
+            </Spinner>
+          </div>
+        )}
+      </div>
     );
   }
 

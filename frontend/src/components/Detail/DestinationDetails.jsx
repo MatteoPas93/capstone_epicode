@@ -5,7 +5,6 @@ import { getUsers } from "../axios_fetch/fetch";
 import AddReviewForm from "../Form/FormReview/AddReview";
 import axios from "axios";
 import "./detail.css";
-// import RatingStars from "./RatingStars";
 import { jwtDecode } from "jwt-decode";
 import { Spinner } from "react-bootstrap";
 import { Modal } from "react-bootstrap";

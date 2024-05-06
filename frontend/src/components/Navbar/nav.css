@@ -1,22 +1,31 @@
-@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
 
 .nav-logo {
-    width: 60px;
-    height: 60px;
-    border-radius: 20px;
-    overflow: hidden;
-    margin-right: 10px;
+  width: 60px;
+  height: 60px;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-right: 10px;
 }
 
 .nav-logo img {
-    width: 100%;
+  width: 100%;
 }
 
 .icon-logout {
-    width: 20px;
-    height: 20px;
+  width: 20px;
+  height: 20px;
+}
+
+.style-font {
+  font-family: "Lobster", sans-serif;
+  color: gray;
 }
 
 .style-font a:hover {
-    color: orange;
+  color: orange;
+}
+
+.title-dreams {
+  font-family: "Lobster", sans-serif;
 }

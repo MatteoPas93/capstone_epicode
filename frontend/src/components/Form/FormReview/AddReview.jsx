@@ -7,7 +7,7 @@ const AddReviewForm = ({ userId, destId }) => {
     comment: "",
     evaluation_score: "",
   });
-  const [error, setError] = useState(""); // eslint-disable-next-line
+  const [error, setError] = useState(""); 
 
   const addRev = async () => {
     try {
@@ -48,6 +48,7 @@ const AddReviewForm = ({ userId, destId }) => {
 
   return (
     <Form noValidate onSubmit={handleSubmit}>
+      {error && <div className="error-message">{error}</div>}
       <Row className="mb-3 flex-column ml-1">
         <Form.Group as={Col} md="4" controlId="validationCustom01">
           <Form.Label>Recensione</Form.Label>

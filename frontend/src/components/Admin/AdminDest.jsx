@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { getDestinations } from "../axios_fetch/fetch";
 import "./adminDest.css";
 import { deleteDestination } from "../axios_fetch/fetch";
 import UpdateDest from "../Form/FormUpdate/FormUpdateDest";
@@ -19,9 +18,9 @@ const DestinationManagement = () => {
 
   const fetchDest = async () => {
     try {
-      // const response = await getDestinations(currentPage);
       const response = await axios.get(
-        `${process.env.REACT_APP_SERVER_BASE_URL}/getDestinations?page=${currentPage}`)
+        `${process.env.REACT_APP_SERVER_BASE_URL}/getDestinations?page=${currentPage}`
+      );
       setDestinations(response.data.destinations);
       setTotalPages(response.data.totalPages);
       setTimeout(() => {
@@ -47,12 +46,12 @@ const DestinationManagement = () => {
   };
 
   const handleNextPage = async () => {
-   setCurrentPage(currentPage + 1);
+    setCurrentPage(currentPage + 1);
     console.log("current", currentPage);
   };
 
   const handlePrevPage = async () => {
-   setCurrentPage(currentPage - 1);
+    setCurrentPage(currentPage - 1);
     console.log("current", currentPage);
   };
 

@@ -66,7 +66,8 @@ const Destinations = () => {
         <Carousel.Item key={i}>
           <div className="container-slide">
             {groupSummer.map((destination, index) => (
-              <Link className="decoration-link"
+              <Link
+                className="decoration-link"
                 to={`/destination_details/${destination._id}`}
                 key={destination._id}
               >
@@ -86,7 +87,6 @@ const Destinations = () => {
               </Link>
             ))}
           </div>
-          {/* <Carousel.Caption></Carousel.Caption> */}
         </Carousel.Item>
       );
       summerSlides.push(slideFirstCarousel);
@@ -103,7 +103,8 @@ const Destinations = () => {
         <Carousel.Item key={i}>
           <div className="container-slide">
             {groupWinter.map((destination, index) => (
-              <Link className="decoration-link"
+              <Link
+                className="decoration-link"
                 to={`/destination_details/${destination._id}`}
                 key={destination._id}
               >
@@ -119,7 +120,6 @@ const Destinations = () => {
               </Link>
             ))}
           </div>
-          {/* <Carousel.Caption></Carousel.Caption> */}
         </Carousel.Item>
       );
       winterSlides.push(slideSecondCarousel);
@@ -136,7 +136,8 @@ const Destinations = () => {
         <Carousel.Item key={i}>
           <div className="container-slide">
             {groupAll.map((destination, index) => (
-              <Link className="decoration-link"
+              <Link
+                className="decoration-link"
                 to={`/destination_details/${destination._id}`}
                 key={destination._id}
               >
@@ -152,7 +153,6 @@ const Destinations = () => {
               </Link>
             ))}
           </div>
-          {/* <Carousel.Caption></Carousel.Caption> */}
         </Carousel.Item>
       );
       allSeasonSlides.push(slideThirdCarousel);

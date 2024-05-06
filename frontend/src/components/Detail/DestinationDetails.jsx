@@ -74,6 +74,7 @@ const DestinationDetail = () => {
   useEffect(() => {
     getDestination();
     getReviews(id);
+    // eslint-disable-next-line
   }, [id]);
 
   const toggleFullReview = (index) => {

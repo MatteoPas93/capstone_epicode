@@ -138,7 +138,7 @@ const DestinationDetail = () => {
             return (
               <div
                 key={index}
-                className="col-lg-3 col-md-6 images-location page-img"
+                className="col-lg-3 col-md-6 images-location page-img text-center"
                 onClick={() => handleImageClick(image)}
               >
                 {" "}

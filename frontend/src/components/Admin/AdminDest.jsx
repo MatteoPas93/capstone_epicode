@@ -34,6 +34,7 @@ const DestinationManagement = () => {
 
   useEffect(() => {
     fetchDest();
+    // eslint-disable-next-line
   }, [currentPage]);
 
   const deleteDest = async (destId) => {

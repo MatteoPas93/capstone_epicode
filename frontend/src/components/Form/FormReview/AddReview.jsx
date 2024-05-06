@@ -7,7 +7,7 @@ const AddReviewForm = ({ userId, destId }) => {
     comment: "",
     evaluation_score: "",
   });
-  const [error, setError] = useState("")
+  const [error, setError] = useState(""); // eslint-disable-next-line
 
   const addRev = async () => {
     try {

@@ -132,7 +132,7 @@ const RegistrationForm = () => {
             className="alert alert-success alert-dismissible fade show"
             role="alert"
           >
-            Registrazione effettuata con successo. Torna alla home.
+            Registrazione effettuata con successo. Torna alla home ed esegui l'accesso.
             <button
               type="button"
               className="btn-close"

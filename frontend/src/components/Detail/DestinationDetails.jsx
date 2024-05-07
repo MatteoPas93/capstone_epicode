@@ -176,11 +176,11 @@ const DestinationDetail = () => {
               {allReviews.length}{" "}
             </h2>
           </div>
-          <div className="d-flex gap-2">
+          <div className="row justify-content-center gap-2">
             {Array.isArray(allReviews) &&
               allReviews.map((rev, i) => {
                 return (
-                  <div key={i} className="card-review">
+                  <div key={i} className="card-review col-lg-3 col-md-6 col-sm-12">
                     <div className="name-avatar d-flex align-items-center gap-2">
                       <div id="avatar">
                         {rev.userAvatar && (

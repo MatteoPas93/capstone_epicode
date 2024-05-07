@@ -48,12 +48,10 @@ const DestinationManagement = () => {
 
   const handleNextPage = async () => {
     setCurrentPage(currentPage + 1);
-    window.location.reload();
   };
 
   const handlePrevPage = async () => {
     setCurrentPage(currentPage - 1);
-    window.location.reload();
   };
 
   if (loading) {
